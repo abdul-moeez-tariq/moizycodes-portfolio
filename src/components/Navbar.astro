@@ -1,0 +1,652 @@
+<!-- <nav class="navbar" aria-label="Main navigation">
+  <a href="#home" class="nav-link active" aria-current="page"> Home </a>
+
+  <a href="#projects" class="nav-link">
+    <span class="project-icon">✳</span>
+    Projects
+  </a>
+
+  <a href="#about" class="nav-link"> About </a>
+
+  <a href="#contact" class="nav-link"> Contact </a>
+</nav>
+
+<script>
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function setActiveLink(link: Element) {
+    navLinks.forEach((item) => {
+      item.classList.remove("active");
+      item.removeAttribute("aria-current");
+    });
+
+    link.classList.add("active");
+    link.setAttribute("aria-current", "page");
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      setActiveLink(link);
+    });
+  });
+
+  const sections = document.querySelectorAll(
+    "#home, #projects, #about, #contact",
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleSections.length) {
+        const activeId = `#${visibleSections[0].target.id}`;
+
+        const activeLink = document.querySelector(
+          `.nav-link[href="${activeId}"]`,
+        );
+
+        if (activeLink) setActiveLink(activeLink);
+      }
+    },
+    {
+      rootMargin: "-15% 0px -65% 0px",
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>
+
+<style>
+  .navbar {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 400px;
+    max-width: calc(100% - 30px);
+
+    margin: 30px auto;
+    padding: 5px;
+
+    gap: 5px;
+
+    border-radius: 50px;
+    background: var(--surface);
+
+    box-shadow: var(--nav-shadow);
+
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .nav-link {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 9px 12px;
+
+    border-radius: 50px;
+
+    color: var(--muted);
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+
+    transition:
+      background 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+  }
+
+  .nav-link.active {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  .project-icon {
+    font-size: 10px;
+  }
+
+  @media (max-width: 380px) {
+    .navbar {
+      width: calc(100% - 24px);
+      gap: 2px;
+    }
+
+    .nav-link {
+      padding: 8px 6px;
+      font-size: 10px;
+    }
+  }
+</style> -->
+<nav class="navbar" aria-label="Main navigation">
+  <a href="#home" class="nav-link active" aria-current="page">Home</a>
+
+  <a href="#projects" class="nav-link">
+    <span class="project-icon">✳</span>
+    Projects
+  </a>
+
+  <a href="#about" class="nav-link">About</a>
+  <a href="#contact" class="nav-link">Contact</a>
+</nav>
+
+<!-- Backdrop -->
+<div class="mobile-backdrop" id="mobile-backdrop"></div>
+
+<!-- Modern Slide-down Menu (under header) -->
+<div
+  class="mobile-menu"
+  id="mobile-navigation"
+  aria-label="Mobile navigation"
+  aria-hidden="true"
+  inert
+>
+  <div class="menu-inner">
+    <nav class="menu-links">
+      <a href="#home" class="menu-link active" data-index="01">
+        <span class="link-index">01</span>
+        <span class="link-text">Home</span>
+      </a>
+
+      <a href="#projects" class="menu-link" data-index="02">
+        <span class="link-index">02</span>
+        <span class="link-text">Projects</span>
+      </a>
+
+      <a href="#about" class="menu-link" data-index="03">
+        <span class="link-index">03</span>
+        <span class="link-text">About</span>
+      </a>
+
+      <a href="#contact" class="menu-link" data-index="04">
+        <span class="link-index">04</span>
+        <span class="link-text">Contact</span>
+      </a>
+    </nav>
+
+    <div class="menu-footer">
+      <div class="socials">
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            ></path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg>
+        </a>
+
+        <a
+          href="https://linkedin.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+
+        <a
+          href="https://instagram.com/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+
+      <p class="copyright">© 2026 MoizyCodes</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const desktopLinks = document.querySelectorAll(".nav-link");
+  const mobileLinks = document.querySelectorAll(".menu-link");
+  const menu = document.querySelector("#mobile-navigation");
+  const backdrop = document.querySelector("#mobile-backdrop");
+
+  let menuOpen = false;
+
+  function setActiveLink(href: string) {
+    desktopLinks.forEach((link) => {
+      const active = link.getAttribute("href") === href;
+      link.classList.toggle("active", active);
+      active
+        ? link.setAttribute("aria-current", "page")
+        : link.removeAttribute("aria-current");
+    });
+
+    mobileLinks.forEach((link) => {
+      const active = link.getAttribute("href") === href;
+      link.classList.toggle("active", active);
+    });
+  }
+
+  function openMenu() {
+    if (menuOpen) return;
+    menuOpen = true;
+
+    menu?.classList.add("is-open");
+    backdrop?.classList.add("is-visible");
+
+    menu?.removeAttribute("inert");
+    menu?.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("menu-open");
+    window.dispatchEvent(new CustomEvent("portfolio-menu-open"));
+  }
+
+  function closeMenu() {
+    if (!menuOpen) return;
+    menuOpen = false;
+
+    menu?.classList.remove("is-open");
+    backdrop?.classList.remove("is-visible");
+
+    menu?.setAttribute("inert", "");
+    menu?.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("menu-open");
+    window.dispatchEvent(new CustomEvent("portfolio-menu-close"));
+  }
+
+  window.addEventListener("portfolio-menu-toggle", () => {
+    menuOpen ? closeMenu() : openMenu();
+  });
+
+  backdrop?.addEventListener("click", closeMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+      if (href) setActiveLink(href);
+      closeMenu();
+    });
+  });
+
+  desktopLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+      if (href) setActiveLink(href);
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
+  // Active section observer
+  const sections = document.querySelectorAll(
+    "#home, #projects, #about, #contact",
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible.length) {
+        setActiveLink(`#${visible[0].target.id}`);
+      }
+    },
+    {
+      rootMargin: "-15% 0px -65% 0px",
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>
+
+<style>
+  /* ===================== DESKTOP NAVBAR ===================== */
+  .navbar {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    max-width: calc(100% - 30px);
+    margin: 28px auto;
+    padding: 5px;
+    gap: 5px;
+    border-radius: 50px;
+    background: var(--surface);
+    box-shadow: var(--nav-shadow);
+  }
+
+  .nav-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 9px 12px;
+    border-radius: 50px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+  }
+
+  .nav-link.active {
+    background: #ffffff;
+    color: #111111;
+  }
+
+  .project-icon {
+    font-size: 10px;
+  }
+
+  /* ===================== BACKDROP ===================== */
+  .mobile-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ===================== MODERN SLIDE-DOWN MENU ===================== */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 160;
+    height: 100dvh;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .menu-inner {
+    position: absolute;
+    top: 90px; /* Header ke neeche se start */
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 40px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transform: translateY(-30px) scale(0.97);
+    opacity: 0;
+    transition: all 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+  }
+
+  .mobile-menu.is-open .menu-inner {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  /* Links */
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 18px 8px;
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-menu.is-open .menu-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.is-open .menu-link:nth-child(1) {
+    transition-delay: 0.08s;
+  }
+  .mobile-menu.is-open .menu-link:nth-child(2) {
+    transition-delay: 0.14s;
+  }
+  .mobile-menu.is-open .menu-link:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  .mobile-menu.is-open .menu-link:nth-child(4) {
+    transition-delay: 0.26s;
+  }
+
+  .link-index {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    min-width: 28px;
+    letter-spacing: 0.05em;
+  }
+
+  .link-text {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    transition: color 0.25s ease;
+  }
+
+  .menu-link:hover .link-text {
+    color: var(--muted);
+  }
+
+  .menu-link.active .link-text {
+    color: var(--text);
+  }
+
+  .menu-link.active .link-index {
+    color: var(--text);
+  }
+
+  /* Footer */
+  /* Footer */
+  .menu-footer {
+    margin-top: auto;
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-menu.is-open .menu-footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.32s;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .socials a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text);
+    background: var(--surface);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    transform: translateY(12px) scale(0.9);
+  }
+
+  .mobile-menu.is-open .socials a {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .mobile-menu.is-open .socials a:nth-child(1) {
+    transition-delay: 0.34s;
+  }
+  .mobile-menu.is-open .socials a:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  .mobile-menu.is-open .socials a:nth-child(3) {
+    transition-delay: 0.46s;
+  }
+
+  .socials a:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  .copyright {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-menu.is-open .copyright {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 768px) {
+    .navbar {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-menu,
+    .mobile-backdrop {
+      display: none !important;
+    }
+  }
+
+  :global(body.menu-open) {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu,
+    .menu-inner,
+    .menu-link,
+    .menu-footer {
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+  }
+</style>

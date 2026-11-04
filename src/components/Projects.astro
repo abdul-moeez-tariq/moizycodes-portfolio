@@ -1,0 +1,162 @@
+---
+const projects = [
+  {
+    name: "Crtly",
+    category: "Mobile App",
+    image: "/images/projects/crtly.webp",
+    alt: "Crtly mobile app interface",
+  },
+  {
+    name: "Tansto",
+    category: "Web Design",
+    image: "/images/projects/tansto.webp",
+    alt: "Tansto website design",
+  },
+  {
+    name: "Senta",
+    category: "Mobile App & Branding",
+    image: "/images/projects/senta.webp",
+    alt: "Senta mobile app and branding",
+  },
+  {
+    name: "Crint",
+    category: "Mobile App",
+    image: "/images/projects/crtly.webp",
+    alt: "Crint mobile app branding",
+  },
+];
+---
+
+<section
+  id="projects"
+  class="relative mx-auto w-full max-w-[1600px] px-[8%] py-24 md:px-[6%] max-md:px-[5.5%] max-md:py-16"
+>
+  <!-- Section Header -->
+  <div
+    class="flex items-end justify-between gap-6 max-md:mb-6"
+  >
+    <div data-reveal class="translate-y-5 opacity-0 transition-[opacity,transform] duration-700 ease-out">
+      <h2
+        class="text-[clamp(25px,3vw,34px)] font-semibold leading-none tracking-[-0.055em] text-[var(--text)]"
+      >
+        Projects
+      </h2>
+
+      <p
+        class="mt-3 max-w-72 text-sm leading-[1.55] text-[var(--text)] opacity-85"
+      >
+        As a seasoned creator of contemporary,
+        user-friendly web designs and digital
+        solutions, I aim to assist you in constructing
+        the brand of your fantasies.
+      </p>
+    </div>
+
+    <a
+      href="/projects"
+      class="group mb-0.5 inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-[var(--text)] no-underline transition-opacity duration-300 hover:opacity-55 sm:text-xs"
+    >
+    <span>
+      More
+    </span>
+
+    <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block transition-transform duration-300 group-hover:translate-x-1">
+            <g clip-path="url(#clip0_43_1089)">
+            <path d="M12.6657 5.97278C12.3537 5.6855 11.9914 5.33831 11.6103 4.94627C10.5057 3.8102 9.20094 2.255 8.53846 0.665L9.46154 0.280401C10.0491 1.6905 11.2443 3.13526 12.3272 4.24919C12.8634 4.8007 13.3617 5.26069 13.7257 5.58253C13.9076 5.74332 14.0555 5.86929 14.1574 5.95459C14.2083 5.99723 14.2477 6.02968 14.2741 6.05122L14.3036 6.07523L14.3106 6.08091L14.3122 6.08215L14.8004 6.47273L14.3124 6.8631L14.3106 6.86455L14.3036 6.87024L14.2741 6.89425C14.2477 6.91578 14.2083 6.94823 14.1574 6.99088C14.0555 7.07617 13.9076 7.20214 13.7257 7.36293C13.3617 7.68477 12.8634 8.14476 12.3272 8.69627C11.2443 9.8102 10.0491 11.255 9.46154 12.665L8.53846 12.2804C9.20094 10.6905 10.5057 9.13526 11.6103 7.99919C11.9914 7.60719 12.3537 7.26004 12.6656 6.97278L3.19431e-07 6.97278L2.7572e-07 5.97278L12.6657 5.97278Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" stroke="currentColor"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_43_1089">
+            <rect width="13" height="15" fill="currentColor" transform="translate(5.68248e-07 13) rotate(-90)"/>
+            </clipPath>
+            </defs>
+    </svg>
+    </a>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-8 max-md:gap-x-3.5 max-md:gap-y-6">
+    {projects.map((project, index) => (
+      <a
+        href={`/projects/${project.name.toLowerCase()}`}
+        aria-label={`View ${project.name} project`}
+        data-reveal
+        class:list={[
+          "group min-w-0 translate-y-6 opacity-0 transition-[opacity,transform] duration-700 ease-out",
+          index === 1 && "delay-100",
+          index === 2 && "delay-200",
+          index === 3 && "delay-300",
+        ]}
+      >
+        <!-- Project Image -->
+        <div
+          class="relative aspect-[1.18/1] w-full overflow-hidden rounded-3xl max-md:rounded-3xl"
+        >
+          <img
+            src={project.image}
+            alt={project.alt}
+            loading="lazy"
+            decoding="async"
+            class="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.2,0.7,0.2,1)] group-hover:scale-[1.045] motion-reduce:transition-none"
+          />
+
+          <!-- Hover Overlay -->
+          <div
+            class="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 transition-opacity duration-400 group-hover:opacity-100"
+          >
+            <span
+              class="translate-y-2 rounded-full border border-white/60 px-4 py-2 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+            >
+              View Project ↗
+            </span>
+          </div>
+        </div>
+
+        <!-- Project Information -->
+        <div class="pt-2.5 max-md:pt-2">
+          <h3
+            class="text-sm font-medium leading-[1.4] tracking-[-0.01em] text-[var(--text)]"
+          >
+            {project.name}
+          </h3>
+
+          <p
+            class="mt-1 leading-normal text-[var(--text)] opacity-60 text-xs"
+          >
+            {project.category}
+          </p>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script>
+  const revealElements = document.querySelectorAll<HTMLElement>(
+    "#projects [data-reveal]"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("translate-y-5", "translate-y-6", "opacity-0");
+            entry.target.classList.add("translate-y-0", "opacity-100");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px",
+      }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.remove("translate-y-5", "translate-y-6", "opacity-0");
+      element.classList.add("translate-y-0", "opacity-100");
+    });
+  }
+</script>

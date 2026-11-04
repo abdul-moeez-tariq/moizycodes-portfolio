@@ -1,0 +1,130 @@
+<button
+  id="theme-toggle"
+  class="theme-toggle"
+  type="button"
+  aria-label="Switch theme"
+  title="Switch theme"
+>
+  <!-- Sun Icon -->
+  <svg
+    id="sun-icon"
+    class="theme-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.42 1.42"></path>
+    <path d="m17.65 17.65 1.42 1.42"></path>
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+    <path d="m6.35 17.65-1.42 1.42"></path>
+    <path d="m19.07 4.93-1.42 1.42"></path>
+  </svg>
+
+  <!-- Moon Icon -->
+  <svg
+    id="moon-icon"
+    class="theme-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M20.9 13.1A8.5 8.5 0 0 1 10.9 3.1 8.5 8.5 0 1 0 20.9 13.1Z"></path>
+  </svg>
+</button>
+
+<script>
+  const toggle = document.querySelector("#theme-toggle");
+  const sunIcon = document.querySelector("#sun-icon");
+  const moonIcon = document.querySelector("#moon-icon");
+
+  function updateThemeIcon() {
+    const isDark = document.documentElement.classList.contains("dark");
+
+    sunIcon?.classList.toggle("visible", !isDark);
+    moonIcon?.classList.toggle("visible", isDark);
+
+    toggle?.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode",
+    );
+  }
+
+  toggle?.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    updateThemeIcon();
+  });
+
+  updateThemeIcon();
+</script>
+
+<style>
+  .theme-toggle {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.07);
+  }
+
+  .theme-icon {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Default state (Light mode → Sun dikhao) */
+  #sun-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  #moon-icon {
+    opacity: 0;
+    transform: scale(0.6) rotate(-90deg);
+  }
+
+  /* Dark mode active hone par */
+  :global(.dark) #sun-icon,
+  :global([data-theme="dark"]) #sun-icon {
+    opacity: 0;
+    transform: scale(0.6) rotate(90deg);
+  }
+
+  :global(.dark) #moon-icon,
+  :global([data-theme="dark"]) #moon-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  .theme-icon.visible {
+    display: block;
+  }
+</style>

@@ -1,0 +1,310 @@
+---
+const expertise = [
+  {
+    number: "01",
+    category: "CLIENT SIDE",
+    title: "Frontend Engineering",
+    description:
+      "Building responsive, interactive and visually refined web interfaces with clean component architecture and exceptional user experiences.",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Astro",
+      "React",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    number: "02",
+    category: "SERVER SIDE",
+    title: "Backend Development",
+    description:
+      "Developing robust server-side applications, application logic, authentication systems and scalable backend architectures.",
+    technologies: ["Node.js", "Express.js", "Authentication", "Server Logic"],
+  },
+  {
+    number: "03",
+    category: "DATA LAYER",
+    title: "Database Architecture",
+    description:
+      "Designing structured data models, managing database operations and building reliable systems for storing and retrieving application data.",
+    technologies: ["MongoDB", "PostgreSQL", "Database Design", "CRUD"],
+  },
+  {
+    number: "04",
+    category: "CONNECTIVITY",
+    title: "API Development",
+    description:
+      "Creating and integrating APIs that connect frontend applications with backend services, third-party platforms and external data sources.",
+    technologies: ["REST APIs", "JSON", "API Integration", "Webhooks"],
+  },
+  {
+    number: "05",
+    category: "PRODUCTION",
+    title: "Deployment & Performance",
+    description:
+      "Preparing applications for production with optimized assets, efficient rendering, reliable deployments and performance-focused development.",
+    technologies: ["Git", "GitHub", "Vercel", "Optimization", "SEO"],
+  },
+];
+---
+
+<section
+  id="expertise"
+  class="expertise relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  <!-- Background Decoration -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -right-32 top-24 h-80 w-80 rounded-full bg-[var(--accent)] opacity-[0.06] blur-[120px]"
+  >
+  </div>
+
+  <!-- Section Heading -->
+  <div
+    data-reveal
+    class="relative flex items-end justify-between gap-8 opacity-0 translate-y-8 blur-[4px] transition-all duration-700 ease-out max-md:flex-col max-md:items-start"
+  >
+    <div class="flex flex-col gap-5">
+      <div class="flex items-center gap-3">
+        <span class="h-px w-8 bg-[var(--accent)]"></span>
+        <span
+          class="text-[10px] font-medium tracking-[0.22em] text-[var(--muted)]"
+        >
+          MY CAPABILITIES
+        </span>
+      </div>
+
+      <h2
+        class="m-0 text-[clamp(54px,9vw,116px)] font-bold uppercase leading-[0.84] tracking-[-0.08em] text-[var(--text)]"
+      >
+        Expertise<span class="text-[var(--accent)]">.</span>
+      </h2>
+    </div>
+
+    <p
+      class="m-0 max-w-[290px] pb-1 text-[13px] leading-[1.8] text-[var(--muted)]"
+    >
+      Engineering modern digital experiences through thoughtful design, powerful
+      technology and purposeful development.
+    </p>
+  </div>
+
+  <!-- Featured Full Stack Card -->
+  <div
+    data-reveal
+    class="group relative mt-20 overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] p-10 opacity-0 translate-y-8 blur-[4px] transition-all duration-700 ease-out hover:border-[var(--accent)] max-md:mt-12 max-md:p-6"
+  >
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -right-20 -top-32 h-[390px] w-[390px] rounded-full border border-[var(--border)] transition-transform duration-1000 ease-out group-hover:scale-110"
+    >
+    </div>
+
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute -right-8 -top-20 h-[310px] w-[310px] rounded-full border border-[var(--border)] transition-transform duration-1000 ease-out group-hover:scale-110"
+    >
+    </div>
+
+    <div
+      class="relative flex items-start justify-between gap-8 max-md:flex-col"
+    >
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-wrap items-center gap-3">
+          <span
+            class="text-[10px] font-semibold tracking-[0.2em] text-[var(--accent)]"
+          >
+            00 / PRIMARY SPECIALIZATION
+          </span>
+          <span class="h-px w-8 bg-[var(--border)]"></span>
+          <span class="text-[9px] tracking-[0.15em] text-[var(--muted)]">
+            FULL STACK
+          </span>
+        </div>
+
+        <div class="flex flex-col gap-5">
+          <h3
+            class="m-0 text-[clamp(42px,7.5vw,90px)] font-bold leading-[0.9] tracking-[-0.075em] text-[var(--text)]"
+          >
+            Full Stack
+            <span class="block text-[var(--accent)]">Developer.</span>
+          </h3>
+
+          <p
+            class="m-0 max-w-[510px] text-[13px] leading-[1.85] text-[var(--muted)]"
+          >
+            From crafting intuitive frontend experiences to engineering powerful
+            backend systems, I build complete web applications designed to
+            perform, scale and make an impact.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          {
+            ["Frontend", "Backend", "Databases", "APIs", "Deployment"].map(
+              (tag) => (
+                <span class="rounded-full border border-[var(--border)] px-3 py-1.5 text-[9px] font-medium tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 group-hover:border-[var(--accent)] group-hover:text-[var(--text)]">
+                  {tag}
+                </span>
+              ),
+            )
+          }
+        </div>
+      </div>
+
+      <div
+        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text)] transition-all duration-500 group-hover:rotate-45 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="M7 17 17 7M7 7h10v10"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expertise Cards -->
+  <div class="mt-5 grid grid-cols-2 gap-4 max-md:grid-cols-1">
+    {
+      expertise.map((item, index) => (
+        <article
+          data-reveal
+          style={`transition-delay: ${index * 90}ms`}
+          class="group relative flex min-h-[285px] flex-col justify-between overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg)] p-8 opacity-0 translate-y-8 blur-[4px] transition-all duration-700 ease-out hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--surface)] max-md:min-h-[250px] max-md:p-6"
+        >
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-semibold tracking-[0.18em] text-[var(--accent)]">
+              / {item.number}
+            </span>
+
+            <svg
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="text-[var(--muted)] transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[var(--accent)]"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7M7 7h10v10" />
+            </svg>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <span class="text-[9px] font-semibold tracking-[0.2em] text-[var(--muted)]">
+              {item.category}
+            </span>
+
+            <h3 class="m-0 text-[clamp(27px,3.3vw,42px)] font-semibold leading-[1.05] tracking-[-0.06em] text-[var(--text)] transition-transform duration-500 group-hover:translate-x-1">
+              {item.title}
+              <span class="text-[var(--accent)]">.</span>
+            </h3>
+
+            <p class="m-0 max-w-[440px] text-[12px] leading-[1.8] text-[var(--muted)]">
+              {item.description}
+            </p>
+
+            <div class="flex flex-wrap gap-x-3 gap-y-2 pt-2">
+              {item.technologies.map((technology) => (
+                <span class="text-[9px] font-medium tracking-[0.04em] text-[var(--text)] opacity-50 transition-opacity duration-300 group-hover:opacity-90">
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="absolute bottom-0 left-0 h-[2px] w-0 bg-[var(--accent)] transition-all duration-700 ease-out group-hover:w-full" />
+        </article>
+      ))
+    }
+  </div>
+
+  <!-- Bottom Detail -->
+  <div
+    data-reveal
+    class="mt-10 flex items-center justify-between gap-5 border-t border-[var(--border)] pt-6 opacity-0 translate-y-8 transition-all duration-700 ease-out max-md:flex-col max-md:items-start"
+  >
+    <span class="text-[9px] font-medium tracking-[0.2em] text-[var(--muted)]">
+      DESIGN / ENGINEERING / EXECUTION
+    </span>
+
+    <span class="text-[9px] font-medium tracking-[0.15em] text-[var(--muted)]">
+      BUILT WITH PURPOSE.
+    </span>
+  </div>
+</section>
+
+<script>
+  const expertiseObservers = new WeakMap();
+
+  function initExpertise() {
+    document.querySelectorAll(".expertise").forEach((section) => {
+      if (expertiseObservers.has(section)) return;
+
+      const elements = section.querySelectorAll("[data-reveal]");
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        elements.forEach((element) => {
+          element.classList.remove("opacity-0", "translate-y-8", "blur-[4px]");
+          element.classList.add("opacity-100", "translate-y-0", "blur-0");
+        });
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const element = entry.target;
+
+            if (entry.isIntersecting) {
+              element.classList.remove(
+                "opacity-0",
+                "translate-y-8",
+                "blur-[4px]",
+              );
+
+              element.classList.add("opacity-100", "translate-y-0", "blur-0");
+            } else {
+              element.classList.remove(
+                "opacity-100",
+                "translate-y-0",
+                "blur-0",
+              );
+
+              element.classList.add("opacity-0", "translate-y-8", "blur-[4px]");
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -30px 0px",
+        },
+      );
+
+      elements.forEach((element) => observer.observe(element));
+      expertiseObservers.set(section, observer);
+    });
+  }
+
+  function cleanupExpertise() {
+    document.querySelectorAll(".expertise").forEach((section) => {
+      expertiseObservers.get(section)?.disconnect();
+      expertiseObservers.delete(section);
+    });
+  }
+
+  initExpertise();
+
+  document.addEventListener("astro:page-load", initExpertise);
+  document.addEventListener("astro:before-swap", cleanupExpertise);
+</script>
