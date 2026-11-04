@@ -1,0 +1,81 @@
+---
+const words = ["DESIGN", "DEVELOP", "BUILD", "INTEGRATE", "OPTIMIZE", "DEPLOY"];
+---
+
+<section
+  id="marquee"
+  class="marquee relative w-full overflow-hidden mt-16 md:mt-20 lg:mt-28 py-8 border-y border-[var(--border)] bg-[var(--surface)]"
+  aria-label="Full stack development: Design, Develop, Build, Integrate, Optimize and Deploy"
+>
+  <div class="flex w-max animate-marquee hover:[animation-play-state:paused]">
+    <!-- First Group -->
+    <div
+      class="marquee-group flex shrink-0 items-center gap-8 pr-8 md:gap-12 md:pr-12"
+    >
+      {
+        words.map((word, index) => (
+          <div class="flex shrink-0 items-center gap-8 md:gap-12">
+            <span
+              class={`whitespace-nowrap text-[clamp(48px,8vw,112px)] font-bold leading-none tracking-[-0.075em] ${
+                index % 2 === 0 ? "text-[var(--text)]" : "text-[var(--accent)]"
+              }`}
+            >
+              {word}
+            </span>
+
+            <span
+              class="flex h-3 w-3 shrink-0 rotate-45 border border-[var(--accent)] md:h-4 md:w-4"
+              aria-hidden="true"
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Duplicate Group for Seamless Loop -->
+    <div
+      class="marquee-group flex shrink-0 items-center gap-8 pr-8 md:gap-12 md:pr-12"
+      aria-hidden="true"
+    >
+      {
+        words.map((word, index) => (
+          <div class="flex shrink-0 items-center gap-8 md:gap-12">
+            <span
+              class={`whitespace-nowrap text-[clamp(48px,8vw,112px)] font-bold leading-none tracking-[-0.075em] ${
+                index % 2 === 0 ? "text-[var(--text)]" : "text-[var(--accent)]"
+              }`}
+            >
+              {word}
+            </span>
+
+            <span class="flex h-3 w-3 shrink-0 rotate-45 border border-[var(--accent)] md:h-4 md:w-4" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+      transform: none;
+    }
+  }
+</style>

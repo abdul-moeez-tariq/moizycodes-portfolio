@@ -1,0 +1,139 @@
+---
+const email = "moizycodes.dev@gmail.com";
+---
+
+<section
+  id="contact"
+  class="contact relative mx-auto flex w-full max-w-[1600px] flex-col items-center px-[8%] mt-16 md:mt-20 lg:mt-28 text-center md:px-[6%] max-md:px-[5.5%]"
+>
+  <div
+    data-contact-reveal
+    class="flex w-full max-w-212.5 flex-col items-center gap-7"
+  >
+    <span class="text-xs font-medium tracking-[0.22em] text-[var(--accent)]">
+      HAVE A PROJECT IN MIND?
+    </span>
+
+    <h2
+      class="text-[clamp(52px,8.5vw,112px)] font-semibold leading-[0.95] tracking-[-0.075em] text-[var(--text)]"
+    >
+      Let's create
+      <span class="block"
+        >something <span class="text-[var(--accent)]">great.</span></span
+      >
+    </h2>
+
+    <p class="max-w-95 text-sm leading-[1.8] text-[var(--muted)]">
+      Got an idea worth building? Let's turn it into a digital experience that
+      makes an impact.
+    </p>
+
+    <a
+      href={`mailto:${email}`}
+      class="scroll-btn group mt-2 inline-flex items-center gap-2 rounded-full bg-[var(--surface)] px-6 py-4 text-xs font-medium tracking-[0.04em] text-[var(--text)] no-underline transition-all duration-300 hover:scale-[1.02]"
+    >
+      <span>Let's Talk</span>
+
+      <span
+        class="flex items-center justify-center text-[var(--text)] transition-transform duration-500 ease-out group-hover:rotate-45 group-hover:text-white dark:group-hover:text-black"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_732_152)">
+            <path
+              d="M13.1794 5.87411C12.7557 5.89159 12.254 5.90228 11.7073 5.89454C10.1229 5.87229 8.1006 5.6952 6.50786 5.03934L6.88862 4.11467C8.30118 4.6963 10.1679 4.87276 11.7213 4.89471C12.4904 4.90553 13.168 4.87844 13.653 4.84863C13.8953 4.8337 14.089 4.8182 14.2214 4.80646C14.2875 4.80062 14.3383 4.7957 14.3722 4.79227L14.41 4.78838L14.419 4.78745L14.421 4.7872L15.0424 4.71817L14.9734 5.33927L14.9731 5.34157L14.9722 5.35054L14.9683 5.38838C14.9649 5.42227 14.96 5.47308 14.9541 5.53923C14.9424 5.67159 14.9269 5.86524 14.9119 6.10756C14.8821 6.59253 14.855 7.27014 14.8659 8.03927C14.8878 9.59266 15.0643 11.4594 15.6459 12.8719L14.7212 13.2527C14.0654 11.66 13.8883 9.63767 13.866 8.05328C13.8583 7.50662 13.869 7.00496 13.8865 6.58129L4.93053 15.5372L4.22342 14.8301L13.1794 5.87411Z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="currentColor"
+              stroke="currentColor"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_732_152">
+              <rect
+                width="13"
+                height="15"
+                fill="white"
+                transform="translate(9.19238 19.7991) rotate(-135)"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </span>
+    </a>
+
+    <div class="mt-5 flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span
+          class="absolute h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-40"
+        ></span>
+        <span class="relative h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+      </span>
+
+      <span class="text-xs tracking-[0.12em] text-[var(--muted)]">
+        AVAILABLE FOR SELECTED PROJECTS
+      </span>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const observers = new WeakMap();
+
+    function initContact() {
+      document.querySelectorAll(".contact").forEach((section) => {
+        if (observers.has(section)) return;
+
+        const element = section.querySelector("[data-contact-reveal]");
+        if (!element) return;
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          return;
+        }
+
+        element.classList.add(
+          "transition-[opacity,transform,filter]",
+          "duration-700",
+          "ease-out",
+        );
+
+        if (element.getBoundingClientRect().top > window.innerHeight) {
+          element.classList.add("opacity-0", "translate-y-6", "blur-[2px]");
+        }
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            const visible = entry.isIntersecting;
+
+            element.classList.toggle("opacity-100", visible);
+            element.classList.toggle("translate-y-0", visible);
+            element.classList.toggle("blur-0", visible);
+
+            element.classList.toggle("opacity-0", !visible);
+            element.classList.toggle("translate-y-6", !visible);
+            element.classList.toggle("blur-[2px]", !visible);
+          },
+          { threshold: 0.15 },
+        );
+
+        observer.observe(element);
+        observers.set(section, observer);
+      });
+    }
+
+    function cleanupContact() {
+      document.querySelectorAll(".contact").forEach((section) => {
+        observers.get(section)?.disconnect();
+        observers.delete(section);
+      });
+    }
+
+    initContact();
+    document.addEventListener("astro:page-load", initContact);
+    document.addEventListener("astro:before-swap", cleanupContact);
+  })();
+</script>

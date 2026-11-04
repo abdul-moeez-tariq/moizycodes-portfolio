@@ -129,3 +129,18 @@ body.menu-open {
   background-color: #fff;
   color: #000;
 }
+
+/* Hide scrollbar - Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar - Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar - IE and old Edge */
+* {
+  -ms-overflow-style: none;
+}

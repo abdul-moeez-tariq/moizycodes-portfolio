@@ -1,0 +1,370 @@
+---
+const year = new Date().getFullYear();
+
+const navigation = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/moizycodes" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/moizy-codes" },
+  { label: "Instagram", href: "https://www.instagram.com/moizycodes" },
+  { label: "TikTok", href: "https://www.tiktok.com/@moizycodes" },
+  { label: "Facebook", href: "https://www.facebook.com/moizycodes" },
+  { label: "Threads", href: "https://www.threads.net/@moizycodes" },
+  { label: "YouTube", href: "https://www.youtube.com/@moizyvlogs" },
+];
+---
+
+<footer
+  class="site-footer relative isolate mx-auto w-full max-w-[1600px] overflow-hidden border-t border-[var(--border)] px-[8%] pt-16 mt-16 md:mt-20 lg:mt-28 md:px-[6%] max-md:px-[5.5%]"
+>
+  <!-- Background Texture -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[85%] bg-[radial-gradient(circle,var(--accent)_1px,transparent_1.5px)] bg-size-[13px_13px] opacity-[0.075] mask-[linear-gradient(to_bottom,black,transparent)]"
+  >
+  </div>
+
+  <div class="relative">
+    <!-- Main Footer -->
+    <div
+      class="grid grid-cols-12 gap-x-8 gap-y-14 max-md:grid-cols-2 max-md:gap-x-6 max-md:gap-y-12"
+    >
+      <!-- Brand -->
+      <div
+        data-footer-reveal
+        class="col-span-4 flex flex-col items-start gap-7 max-md:col-span-2"
+      >
+        <a
+          href="#home"
+          aria-label="moizycodes home"
+          class="text-[clamp(34px,4vw,54px)] font-bold leading-[0.85] tracking-[-0.085em] text-[var(--text)] no-underline transition-colors duration-500 hover:text-[var(--accent)]"
+        >
+          moizycodes<span class="text-[var(--accent)]">.</span>
+        </a>
+
+        <p class="m-0 max-w-63.75 text-xs leading-[1.9] text-[var(--muted)]">
+          Independent full stack developer creating thoughtful digital
+          experiences through design and technology.
+        </p>
+
+        <span
+          class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+        >
+          Design · Development · Innovation
+        </span>
+      </div>
+
+      <!-- Explore -->
+      <div
+        data-footer-reveal
+        class="col-span-2 flex flex-col items-start gap-7 max-md:col-span-1"
+      >
+        <span
+          class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Explore
+        </span>
+
+        <nav
+          aria-label="Footer navigation"
+          class="flex flex-col items-start gap-5"
+        >
+          {
+            navigation.map((item) => (
+              <a
+                href={item.href}
+                class="group relative text-[clamp(13px,1.3vw,17px)] font-bold uppercase leading-none tracking-[-0.045em] text-[var(--text)] no-underline transition-colors duration-300 hover:text-[var(--accent)]"
+              >
+                {item.label}
+                <span class="absolute -bottom-1.5 left-0 h-0.5 w-0 rounded-full bg-[var(--accent)] transition-all duration-500 ease-out group-hover:w-full" />
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+
+      <!-- Social -->
+      <div
+        data-footer-reveal
+        class="col-span-3 flex flex-col items-start gap-7 max-md:col-span-1"
+      >
+        <span
+          class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Social
+        </span>
+
+        <nav aria-label="Social media" class="flex flex-col items-start gap-5">
+          {
+            socials.map((social) => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative text-[clamp(13px,1.3vw,17px)] font-bold uppercase leading-none tracking-[-0.045em] text-[var(--text)] no-underline transition-colors duration-300 hover:text-[var(--accent)]"
+              >
+                {social.label}
+                <span class="absolute -bottom-1.5 left-0 h-0.5 w-0 rounded-full bg-[var(--accent)] transition-all duration-500 ease-out group-hover:w-full" />
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+
+      <!-- Based In -->
+      <div
+        data-footer-reveal
+        class="col-span-3 flex flex-col items-start gap-7 max-md:col-span-2"
+      >
+        <span
+          class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Based In
+        </span>
+
+        <div class="flex flex-col gap-5">
+          <h3
+            class="text-[clamp(25px,3vw,39px)] font-extrabold uppercase leading-[0.95] tracking-[-0.065em] text-[var(--text)]"
+          >
+            Pakistan
+          </h3>
+
+          <div class="flex items-center gap-3">
+            <span class="relative flex h-2 w-2 shrink-0">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-40"
+              ></span>
+              <span class="relative h-2 w-2 rounded-full bg-[var(--accent)]"
+              ></span>
+            </span>
+
+            <span class="text-xs text-[var(--muted)]"> PKT · UTC +5 </span>
+          </div>
+        </div>
+
+        <p class="max-w-47.5 text-xs leading-[1.9] text-[var(--muted)]">
+          Working globally, building for the web.
+        </p>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div
+      data-footer-reveal
+      class="mt-20 flex items-center justify-between gap-5 border-t border-[var(--border)] py-6 max-md:mt-14 max-md:flex-col max-md:items-start"
+    >
+      <span class="text-xs tracking-[0.035em] text-[var(--muted)]">
+        © {year} moizycodes. All rights reserved.
+      </span>
+
+      <span class="text-xs tracking-[0.035em] text-[var(--muted)]">
+        Designed & developed with purpose.
+      </span>
+    </div>
+
+    <!-- Oversized Centered Wordmark -->
+    <div
+      data-footer-reveal
+      class="flex w-full items-center justify-center overflow-hidden pb-5 pt-8 max-md:pb-3 max-md:pt-6"
+    >
+      <a
+        href="#home"
+        aria-label="Back to homepage"
+        class="block whitespace-nowrap text-center text-[clamp(48px,13.2vw,190px)] font-bold leading-[0.9] tracking-[-0.065em] text-[var(--text)] no-underline transition-colors duration-500 hover:text-[var(--accent)]"
+      >
+        moizycodes<span class="text-[var(--accent)]">.</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Global Back To Top -->
+  <button
+    type="button"
+    data-back-to-top
+    aria-label="Back to top"
+    class="pointer-events-none fixed bottom-7 right-[6%] z-[100] flex h-12 w-12 translate-y-3 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-all duration-500 ease-out hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] max-md:bottom-5 max-md:right-[5.5%]"
+  >
+    <!-- Scroll Progress Ring -->
+    <svg
+      class="pointer-events-none absolute inset-0 h-full w-full -rotate-90"
+      viewBox="0 0 48 48"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle
+        cx="24"
+        cy="24"
+        r="22.5"
+        stroke="var(--accent)"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-dasharray="141.372"
+        stroke-dashoffset="141.372"
+        data-scroll-progress></circle>
+    </svg>
+
+    <!-- Arrow -->
+    <svg
+      width="19"
+      height="19"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.7"
+      class="relative z-10 transition-transform duration-300 group-hover:-translate-y-1"
+      aria-hidden="true"
+    >
+      <path d="M12 19V5M5 12l7-7 7 7"></path>
+    </svg>
+  </button>
+</footer>
+
+<script>
+  (() => {
+    const selector = ".site-footer";
+
+    function initFooter() {
+      document.querySelectorAll(selector).forEach((footer) => {
+        if (footer.dataset.footerReady === "true") return;
+
+        footer.dataset.footerReady = "true";
+
+        const revealItems = footer.querySelectorAll("[data-footer-reveal]");
+        const backToTop = footer.querySelector("[data-back-to-top]");
+        const progressRing = footer.querySelector("[data-scroll-progress]");
+
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        // Scroll Reveal
+        if (reducedMotion) {
+          revealItems.forEach((item) => {
+            item.classList.remove("opacity-0", "translate-y-8", "blur-[4px]");
+            item.classList.add("opacity-100", "translate-y-0", "blur-0");
+          });
+        } else {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                const item = entry.target;
+                const visible = entry.isIntersecting;
+
+                item.classList.toggle("opacity-100", visible);
+                item.classList.toggle("translate-y-0", visible);
+                item.classList.toggle("blur-0", visible);
+
+                item.classList.toggle("opacity-0", !visible);
+                item.classList.toggle("translate-y-8", !visible);
+                item.classList.toggle("blur-[4px]", !visible);
+              });
+            },
+            {
+              threshold: 0.08,
+              rootMargin: "0px 0px -30px 0px",
+            },
+          );
+
+          revealItems.forEach((item, index) => {
+            item.classList.add(
+              "opacity-0",
+              "translate-y-8",
+              "blur-[4px]",
+              "transition-all",
+              "duration-1000",
+              "ease-out",
+            );
+
+            item.style.transitionDelay = `${index * 90}ms`;
+            observer.observe(item);
+          });
+
+          footer._footerObserver = observer;
+        }
+
+        // Back To Top + Scroll Progress
+        if (backToTop) {
+          const circumference = 141.372;
+
+          const updateButton = () => {
+            const scrollableHeight =
+              document.documentElement.scrollHeight - window.innerHeight;
+
+            const progress =
+              scrollableHeight > 0
+                ? Math.min(Math.max(window.scrollY / scrollableHeight, 0), 1)
+                : 0;
+
+            const visible = window.scrollY > 450;
+
+            backToTop.classList.toggle("opacity-100", visible);
+            backToTop.classList.toggle("translate-y-0", visible);
+            backToTop.classList.toggle("pointer-events-auto", visible);
+
+            backToTop.classList.toggle("opacity-0", !visible);
+            backToTop.classList.toggle("translate-y-3", !visible);
+            backToTop.classList.toggle("pointer-events-none", !visible);
+
+            if (progressRing) {
+              progressRing.style.strokeDashoffset = String(
+                circumference * (1 - progress),
+              );
+            }
+          };
+
+          const scrollToTop = () => {
+            window.scrollTo({
+              top: 0,
+              behavior: reducedMotion ? "instant" : "smooth",
+            });
+          };
+
+          window.addEventListener("scroll", updateButton, {
+            passive: true,
+          });
+
+          window.addEventListener("resize", updateButton);
+          backToTop.addEventListener("click", scrollToTop);
+
+          updateButton();
+
+          footer._footerScrollHandler = updateButton;
+          footer._footerClickHandler = scrollToTop;
+        }
+      });
+    }
+
+    function cleanupFooter() {
+      document.querySelectorAll(selector).forEach((footer) => {
+        footer._footerObserver?.disconnect();
+
+        if (footer._footerScrollHandler) {
+          window.removeEventListener("scroll", footer._footerScrollHandler);
+          window.removeEventListener("resize", footer._footerScrollHandler);
+        }
+
+        if (footer._footerClickHandler) {
+          footer
+            .querySelector("[data-back-to-top]")
+            ?.removeEventListener("click", footer._footerClickHandler);
+        }
+
+        delete footer._footerObserver;
+        delete footer._footerScrollHandler;
+        delete footer._footerClickHandler;
+        delete footer.dataset.footerReady;
+      });
+    }
+
+    initFooter();
+
+    document.addEventListener("astro:page-load", initFooter);
+    document.addEventListener("astro:before-swap", cleanupFooter);
+  })();
+</script>
