@@ -1,0 +1,810 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const socials = [
+  { name: "GitHub", url: "https://github.com/moizycodes" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/moizy-codes" },
+  { name: "Instagram", url: "https://www.instagram.com/moizycodes" },
+  { name: "YouTube", url: "https://www.youtube.com/@moizyvlogs" },
+];
+---
+
+<!-- <header class="site-header">
+  <a href="/" class="brand-logo" aria-label="MoizyCodes home">
+    <img src="/images/logo.png" alt="MoizyCodes Logo" />
+  </a>
+
+  <div class="header-actions">
+    <ThemeToggle />
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.querySelector("#menu-toggle");
+
+  menuToggle?.addEventListener("click", () => {
+    window.dispatchEvent(new CustomEvent("portfolio-menu-toggle"));
+  });
+
+  window.addEventListener("portfolio-menu-close", () => {
+    menuToggle?.classList.remove("is-open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute("aria-label", "Open navigation menu");
+  });
+
+  window.addEventListener("portfolio-menu-open", () => {
+    menuToggle?.classList.add("is-open");
+    menuToggle?.setAttribute("aria-expanded", "true");
+    menuToggle?.setAttribute("aria-label", "Close navigation menu");
+  });
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 200;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    background: transparent;
+    padding: 0 5%;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .brand-logo img {
+    display: block;
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+  }
+
+  /* Light mode mein white logo ko dark bana do */
+  .brand-logo img {
+    filter: invert(1); /* white ko black bana dega */
+  }
+
+  /* Dark mode mein normal white rehne do */
+  :global(.dark) .brand-logo img,
+  :global([data-theme="dark"]) .brand-logo img {
+    filter: invert(0);
+  }
+
+  .header-actions {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(-50%);
+    z-index: 210;
+  }
+
+  .menu-toggle {
+    display: none;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4.5px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.07);
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 14px;
+    height: 1.5px;
+    border-radius: 10px;
+    background: currentColor;
+    transition: all 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .menu-toggle span:nth-child(2) {
+    width: 10px;
+    margin-left: 4px;
+  }
+
+  .menu-toggle.is-open span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+
+  .menu-toggle.is-open span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* ========== Tablet & Mobile ========== */
+  @media (max-width: 768px) {
+    .site-header {
+      height: 56px;
+      margin-top: 14px;
+      justify-content: space-between; /* Logo left, buttons right */
+      padding: 0 5%;
+    }
+
+    .brand-logo {
+      justify-content: flex-start;
+    }
+
+    /* .brand-logo img {
+      width: 92px;
+    } */
+
+    .header-actions {
+      position: static; /* absolute hata diya */
+      transform: none;
+      right: auto;
+      gap: 10px;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .site-header {
+      padding: 0 4%;
+    }
+
+    .brand-logo img {
+      /* width: 84px; */
+      height: 50px;
+    }
+
+    .header-actions {
+      gap: 8px;
+    }
+  }
+</style> -->
+<header
+  class="relative z-[200] mx-auto mt-4 flex h-[60px] w-full max-w-[1600px] items-center justify-between bg-transparent px-[8%] md:px-[6%] max-md:mt-2 max-md:h-14 max-md:px-[5.5%]"
+>
+  <!-- Desktop Left Navigation -->
+  <nav class="hidden items-center gap-7 md:flex" aria-label="Main navigation">
+    <a
+      href="#home"
+      data-nav
+      class="nav-link relative py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent)] after:transition-transform after:duration-300 hover:after:scale-x-100"
+      >Home</a
+    >
+
+    <a
+      href="#projects"
+      data-nav
+      class="nav-link relative py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent)] after:transition-transform after:duration-300 hover:after:scale-x-100"
+      >Projects</a
+    >
+
+    <a
+      href="#about"
+      data-nav
+      class="nav-link relative py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent)] after:transition-transform after:duration-300 hover:after:scale-x-100"
+      >About</a
+    >
+
+    <!-- More Dropdown -->
+    <div class="relative" id="more-dropdown">
+      <button
+        id="more-toggle"
+        type="button"
+        class="flex items-center gap-1.5 py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)]"
+        aria-expanded="false"
+        aria-controls="more-panel"
+      >
+        More
+        <svg
+          class="h-3 w-3 transition-transform duration-300"
+          id="more-arrow"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="m3 6 5 5 5-5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+
+      <div
+        id="more-panel"
+        class="invisible absolute left-0 top-full z-[220] mt-4 w-[340px] translate-y-2 rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-5 opacity-0 shadow-2xl shadow-black/10 transition-all duration-300"
+        aria-hidden="true"
+        inert
+      >
+        <div class="mb-4">
+          <p
+            class="mb-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--muted)]"
+          >
+            Explore
+          </p>
+
+          <div class="grid grid-cols-2 gap-2">
+            <a
+              href="#expertise"
+              data-nav
+              class="dropdown-link rounded-lg px-3 py-3 text-sm text-[var(--text)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
+              >Skills <span class="ml-1 text-[var(--muted)]">↗</span></a
+            >
+            <a
+              href="#experience"
+              data-nav
+              class="dropdown-link rounded-lg px-3 py-3 text-sm text-[var(--text)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
+              >Experience <span class="ml-1 text-[var(--muted)]">↗</span></a
+            >
+            <a
+              href="#services"
+              data-nav
+              class="dropdown-link rounded-lg px-3 py-3 text-sm text-[var(--text)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
+              >Services <span class="ml-1 text-[var(--muted)]">↗</span></a
+            >
+            <a
+              href="/about"
+              data-nav
+              class="dropdown-link rounded-lg px-3 py-3 text-sm text-[var(--text)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
+              >About Me <span class="ml-1 text-[var(--muted)]">↗</span></a
+            >
+          </div>
+        </div>
+
+        <div class="border-t border-[var(--border)] pt-4">
+          <p
+            class="mb-3 text-[10px] font-semibold uppercase tracking-[0.15em] text-[var(--muted)]"
+          >
+            Find me around the web
+          </p>
+
+          <div class="grid grid-cols-2 gap-2">
+            {
+              socials.map((social) => (
+                <a
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-lg px-3 py-2.5 text-xs text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--accent)]"
+                >
+                  {social.name} <span class="ml-1">↗</span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Center Logo -->
+  <a
+    href="#home"
+    class="absolute left-1/2 flex -translate-x-1/2 items-center justify-center"
+    aria-label="MoizyCodes home"
+  >
+    <img
+      src="/images/logo.png"
+      alt="MoizyCodes Logo"
+      class="h-[42px] w-auto object-contain invert transition-[filter] duration-300 dark:invert-0 max-md:h-9"
+    />
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="ml-auto flex items-center gap-7">
+    <nav
+      class="hidden items-center gap-7 md:flex"
+      aria-label="Contact navigation"
+    >
+      <a
+        href="#contact"
+        data-nav
+        class="nav-link relative py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent)] after:transition-transform after:duration-300 hover:after:scale-x-100"
+        >Contact</a
+      >
+
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="relative py-2 text-[11px] font-semibold uppercase tracking-[0.06em] text-[var(--muted)] transition-colors duration-300 hover:text-[var(--accent)] after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent)] after:transition-transform after:duration-300 hover:after:scale-x-100"
+        >Resume ↗</a
+      >
+    </nav>
+
+    <ThemeToggle />
+
+    <!-- Original Mobile Menu Toggle -->
+    <button
+      class="relative hidden h-8 w-8 flex-col items-center justify-center gap-[4.5px] rounded-full border border-[var(--border)] bg-[var(--surface)] p-0 text-[var(--text)] transition-transform duration-300 hover:scale-105 max-md:flex"
+      id="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+    >
+      <span
+        class="block h-[1.5px] w-[14px] rounded-full bg-current transition-all duration-300"
+      ></span>
+      <span
+        class="ml-1 block h-[1.5px] w-[10px] rounded-full bg-current transition-all duration-300"
+      ></span>
+      <span
+        class="block h-[1.5px] w-[14px] rounded-full bg-current transition-all duration-300"
+      ></span>
+    </button>
+  </div>
+</header>
+
+<!-- Original Mobile Backdrop -->
+<button
+  class="invisible fixed inset-0 z-[150] bg-black/45 opacity-0 backdrop-blur-[10px] transition-all duration-500 md:hidden"
+  id="mobile-backdrop"
+  type="button"
+  aria-label="Close navigation menu"
+  tabindex="-1"></button>
+
+<!-- Original Mobile Menu Layout -->
+<div
+  class="invisible pointer-events-none fixed inset-0 z-[160] h-dvh opacity-0 transition-all duration-400 md:hidden"
+  id="mobile-navigation"
+  aria-label="Mobile navigation"
+  aria-hidden="true"
+  inert
+>
+  <div
+    class="absolute bottom-4 left-4 right-4 top-[90px] flex translate-y-[-30px] scale-[0.97] flex-col overflow-y-auto rounded-[28px] border border-[var(--border)] bg-[var(--bg)] px-7 py-[30px] pb-7 opacity-0 shadow-[0_30px_80px_rgba(0,0,0,0.18)] transition-all duration-500"
+  >
+    <nav class="flex flex-1 flex-col gap-2" aria-label="Mobile links">
+      <a
+        href="#home"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-[18px] text-[var(--text)] opacity-0 transition-all duration-500"
+      >
+        <span
+          class="min-w-7 text-[13px] font-medium tracking-[0.05em] text-[var(--muted)]"
+          >01</span
+        >
+        <span class="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Home</span
+        >
+      </a>
+
+      <a
+        href="#projects"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-[18px] text-[var(--text)] opacity-0 transition-all duration-500"
+      >
+        <span
+          class="min-w-7 text-[13px] font-medium tracking-[0.05em] text-[var(--muted)]"
+          >02</span
+        >
+        <span class="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Projects</span
+        >
+      </a>
+
+      <a
+        href="#about"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-[18px] text-[var(--text)] opacity-0 transition-all duration-500"
+      >
+        <span
+          class="min-w-7 text-[13px] font-medium tracking-[0.05em] text-[var(--muted)]"
+          >03</span
+        >
+        <span class="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >About</span
+        >
+      </a>
+
+      <a
+        href="#contact"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-[18px] text-[var(--text)] opacity-0 transition-all duration-500"
+      >
+        <span
+          class="min-w-7 text-[13px] font-medium tracking-[0.05em] text-[var(--muted)]"
+          >04</span
+        >
+        <span class="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Contact</span
+        >
+      </a>
+
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mobile-link flex translate-y-6 items-baseline gap-5 px-2 py-[18px] text-[var(--text)] opacity-0 transition-all duration-500"
+      >
+        <span
+          class="min-w-7 text-[13px] font-medium tracking-[0.05em] text-[var(--muted)]"
+          >05</span
+        >
+        <span class="text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Resume ↗</span
+        >
+      </a>
+    </nav>
+
+    <!-- Original Social Footer -->
+    <div
+      class="menu-footer mt-auto flex translate-y-5 flex-col items-center gap-[18px] pt-8 opacity-0 transition-all duration-500"
+    >
+      <div class="socials flex items-center justify-center gap-4">
+        <a
+          href="https://github.com/moizycodes"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="flex h-11 w-11 translate-y-3 scale-90 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--text)] hover:text-[var(--bg)]"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            ></path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/moizy-codes"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="flex h-11 w-11 translate-y-3 scale-90 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--text)] hover:text-[var(--bg)]"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.instagram.com/moizycodes"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="flex h-11 w-11 translate-y-3 scale-90 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--text)] hover:text-[var(--bg)]"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+
+      <p class="m-0 text-[12px] tracking-[0.04em] text-[var(--muted)]">
+        © 2026 moizycodes
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.querySelector<HTMLButtonElement>("#menu-toggle");
+  const menu = document.querySelector<HTMLDivElement>("#mobile-navigation");
+  const menuInner = menu?.firstElementChild as HTMLDivElement | null;
+  const backdrop =
+    document.querySelector<HTMLButtonElement>("#mobile-backdrop");
+
+  const mobileLinks =
+    document.querySelectorAll<HTMLAnchorElement>(".mobile-link");
+  const desktopLinks =
+    document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const allNavLinks =
+    document.querySelectorAll<HTMLAnchorElement>("[data-nav]");
+
+  const moreToggle = document.querySelector<HTMLButtonElement>("#more-toggle");
+  const morePanel = document.querySelector<HTMLDivElement>("#more-panel");
+  const moreArrow = document.querySelector<SVGElement>("#more-arrow");
+
+  const menuFooter = menu?.querySelector(".menu-footer");
+  const socialLinks = menu?.querySelectorAll(".socials a");
+
+  let menuOpen = false;
+  let dropdownOpen = false;
+
+  function setActiveLink(href: string) {
+    allNavLinks.forEach((link) => {
+      const active = link.getAttribute("href") === href;
+
+      link.classList.toggle("text-[var(--accent)]", active);
+      link.classList.toggle("active", active);
+
+      if (active) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+
+    const dropdownActive = [
+      ...(morePanel?.querySelectorAll<HTMLAnchorElement>("[data-nav]") ?? []),
+    ].some((link) => link.getAttribute("href") === href);
+
+    moreToggle?.classList.toggle("text-[var(--accent)]", dropdownActive);
+  }
+
+  function openMenu() {
+    if (!menu || !menuInner || !backdrop || !menuToggle || menuOpen) return;
+
+    menuOpen = true;
+
+    menu.classList.remove("invisible", "pointer-events-none", "opacity-0");
+    menu.classList.add("pointer-events-auto", "opacity-100");
+    menu.setAttribute("aria-hidden", "false");
+    menu.removeAttribute("inert");
+
+    menuInner.classList.remove(
+      "translate-y-[-30px]",
+      "scale-[0.97]",
+      "opacity-0",
+    );
+    menuInner.classList.add("translate-y-0", "scale-100", "opacity-100");
+
+    backdrop.classList.remove("invisible", "opacity-0");
+    backdrop.classList.add("visible", "opacity-100");
+    backdrop.tabIndex = 0;
+
+    menuToggle.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close navigation menu");
+
+    mobileLinks.forEach((link, index) => {
+      link.classList.remove("translate-y-6", "opacity-0");
+      link.classList.add("translate-y-0", "opacity-100");
+      link.style.transitionDelay = `${0.08 + index * 0.06}s`;
+    });
+
+    menuFooter?.classList.remove("translate-y-5", "opacity-0");
+    menuFooter?.classList.add("translate-y-0", "opacity-100");
+
+    socialLinks?.forEach((link, index) => {
+      link.classList.remove("translate-y-3", "scale-90", "opacity-0");
+      link.classList.add("translate-y-0", "scale-100", "opacity-100");
+      (link as HTMLElement).style.transitionDelay = `${0.34 + index * 0.06}s`;
+    });
+
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    if (!menu || !menuInner || !backdrop || !menuToggle || !menuOpen) return;
+
+    menuOpen = false;
+
+    menu.classList.add("pointer-events-none", "opacity-0");
+    menu.classList.remove("pointer-events-auto", "opacity-100");
+    menu.setAttribute("aria-hidden", "true");
+    menu.setAttribute("inert", "");
+
+    menuInner.classList.add("translate-y-[-30px]", "scale-[0.97]", "opacity-0");
+    menuInner.classList.remove("translate-y-0", "scale-100", "opacity-100");
+
+    backdrop.classList.add("invisible", "opacity-0");
+    backdrop.classList.remove("visible", "opacity-100");
+    backdrop.tabIndex = -1;
+
+    menuToggle.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+    mobileLinks.forEach((link) => {
+      link.classList.add("translate-y-6", "opacity-0");
+      link.classList.remove("translate-y-0", "opacity-100");
+      link.style.transitionDelay = "0s";
+    });
+
+    menuFooter?.classList.add("translate-y-5", "opacity-0");
+    menuFooter?.classList.remove("translate-y-0", "opacity-100");
+
+    socialLinks?.forEach((link) => {
+      link.classList.add("translate-y-3", "scale-90", "opacity-0");
+      link.classList.remove("translate-y-0", "scale-100", "opacity-100");
+      (link as HTMLElement).style.transitionDelay = "0s";
+    });
+
+    document.body.classList.remove("menu-open");
+  }
+
+  function openDropdown() {
+    if (!morePanel || !moreToggle || !moreArrow || dropdownOpen) return;
+
+    dropdownOpen = true;
+
+    morePanel.classList.remove("invisible", "opacity-0", "translate-y-2");
+    morePanel.classList.add("visible", "opacity-100", "translate-y-0");
+    morePanel.removeAttribute("inert");
+    morePanel.setAttribute("aria-hidden", "false");
+
+    moreToggle.setAttribute("aria-expanded", "true");
+    moreArrow.classList.add("rotate-180");
+  }
+
+  function closeDropdown() {
+    if (!morePanel || !moreToggle || !moreArrow || !dropdownOpen) return;
+
+    dropdownOpen = false;
+
+    morePanel.classList.add("invisible", "opacity-0", "translate-y-2");
+    morePanel.classList.remove("visible", "opacity-100", "translate-y-0");
+    morePanel.setAttribute("inert", "");
+    morePanel.setAttribute("aria-hidden", "true");
+
+    moreToggle.setAttribute("aria-expanded", "false");
+    moreArrow.classList.remove("rotate-180");
+  }
+
+  menuToggle?.addEventListener("click", () => {
+    menuOpen ? closeMenu() : openMenu();
+  });
+
+  backdrop?.addEventListener("click", closeMenu);
+
+  moreToggle?.addEventListener("click", () => {
+    dropdownOpen ? closeDropdown() : openDropdown();
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node;
+
+    if (
+      dropdownOpen &&
+      !moreToggle?.contains(target) &&
+      !morePanel?.contains(target)
+    ) {
+      closeDropdown();
+    }
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+
+      if (href?.startsWith("#")) setActiveLink(href);
+
+      closeMenu();
+    });
+  });
+
+  allNavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const href = link.getAttribute("href");
+
+      if (href?.startsWith("#")) setActiveLink(href);
+      closeDropdown();
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      closeDropdown();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
+  // Active section detection
+  const sections = document.querySelectorAll<HTMLElement>(
+    "#home, #projects, #about, #expertise, #experience, #services, #contact",
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visible.length) {
+        setActiveLink(`#${visible[0].target.id}`);
+      }
+    },
+    {
+      rootMargin: "-15% 0px -65% 0px",
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  // Separate page active state
+  function setPageActiveState() {
+    const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+
+    allNavLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+
+      if (!href?.startsWith("/") || href.startsWith("/#")) return;
+
+      const linkPath =
+        new URL(href, window.location.origin).pathname.replace(/\/$/, "") ||
+        "/";
+
+      if (linkPath === currentPath) {
+        setActiveLink(href);
+      }
+    });
+  }
+
+  setPageActiveState();
+
+  // Keep active navigation in sync with browser history
+  window.addEventListener("popstate", setPageActiveState);
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash) setActiveLink(window.location.hash);
+  });
+</script>

@@ -83,7 +83,7 @@ a {
 }
 
 button {
-  font: inherit;
+  /* font: inherit; */
   cursor: pointer;
 }
 
@@ -143,4 +143,54 @@ body.menu-open {
 /* Hide scrollbar - IE and old Edge */
 * {
   -ms-overflow-style: none;
+}
+
+.site-header .nav-link:hover {
+  color: var(--accent) !important;
+}
+
+.site-header .nav-link.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Mega Menu - Dropdown Button */
+
+/* Discover Mega Menu Links */
+.mega-link {
+  position: relative;
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+.mega-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+.mega-link:hover {
+  color: var(--accent);
+}
+
+.mega-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active Mega Menu Link */
+.mega-link.active {
+  color: var(--accent);
+}
+
+.mega-link.active::after {
+  transform: scaleX(1);
 }

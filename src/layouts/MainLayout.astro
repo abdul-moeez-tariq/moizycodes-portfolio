@@ -1,4 +1,7 @@
 ---
+import { ClientRouter } from "astro:transitions";
+import Footer from "../components/global/Footer.astro";
+import Header from "../components/global/Header.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -7,7 +10,7 @@ interface Props {
 }
 
 const {
-  title = "MoizyCodes | Creative Developer",
+  title = "moizycodes",
   description = "Personal portfolio of MoizyCodes.",
 } = Astro.props;
 ---
@@ -18,6 +21,8 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <ClientRouter />
 
     <title>{title}</title>
 
@@ -34,10 +39,16 @@ const {
       } catch {
         document.documentElement.classList.add("dark");
       }
+
+      console.log("FULL PAGE RELOAD");
     </script>
   </head>
 
   <body>
+    <Header transition:persist />
+
     <slot />
+
+    <Footer transition:persist />
   </body>
 </html>

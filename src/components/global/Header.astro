@@ -1,0 +1,475 @@
+---
+import ThemeToggle from "../global/ThemeToggle.astro";
+---
+
+<header
+  class="site-header relative z-200 mx-auto mt-5 flex h-15 w-full max-w-[1600px] items-center justify-center bg-transparent px-[8%] md:px-[6%] max-md:mt-3.5 max-md:h-14 max-md:px-[5.5%]"
+>
+  <!-- Desktop Left Navigation -->
+  <nav
+    class="absolute left-[6%] hidden items-center md:flex"
+    aria-label="Main navigation"
+  >
+    <ul class="m-0 flex list-none items-center gap-5 p-0">
+      <li>
+        <a
+          href="/"
+          data-nav
+          class="nav-link relative text-sm uppercase transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-[var(--nav-underline-scale,0)] after:bg-[var(--accent)] after:transition-transform after:duration-300 after:content-[''] hover:text-[var(--accent)] hover:after:scale-x-100"
+        >
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/projects"
+          data-nav
+          class="nav-link relative text-sm uppercase transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-[var(--nav-underline-scale,0)] after:bg-[var(--accent)] after:transition-transform after:duration-300 after:content-[''] hover:text-[var(--accent)] hover:after:scale-x-100"
+        >
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="/about"
+          data-nav
+          class="nav-link relative text-sm uppercase transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-[var(--nav-underline-scale,0)] after:bg-[var(--accent)] after:transition-transform after:duration-300 after:content-[''] hover:text-[var(--accent)] hover:after:scale-x-100"
+        >
+          About
+        </a>
+      </li>
+
+      <li>
+        <button
+          id="discover-toggle"
+          type="button"
+          class="group flex items-center gap-1.5 text-sm uppercase transition-colors duration-300 hover:text-[var(--accent)]"
+          aria-expanded="false"
+          aria-controls="discover-menu"
+        >
+          Discover
+
+          <svg
+            id="discover-arrow"
+            class="h-3 w-3 transition-transform duration-300"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="m3 6 5 5 5-5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Center Logo -->
+  <a
+    href="/"
+    class="brand-logo absolute left-1/2 flex -translate-x-1/2 items-center justify-center max-md:left-[5.5%] max-md:translate-x-0"
+    aria-label="moizycodes home"
+  >
+    <img
+      src="/images/logo.png"
+      alt="moizycodes Logo"
+      class="h-20 w-auto object-contain invert transition-[filter] duration-300 dark:invert-0 max-md:h-14"
+    />
+  </a>
+
+  <!-- Right Actions -->
+  <div
+    class="header-actions absolute right-[6%] top-1/2 flex -translate-y-1/2 items-center gap-7 max-md:static max-md:ml-auto max-md:translate-y-0 max-md:gap-2.5"
+  >
+    <nav class="hidden items-center md:flex" aria-label="Contact navigation">
+      <ul class="flex list-none items-center gap-5 p-0">
+        <li>
+          <a
+            href="/#contact"
+            data-nav
+            class="nav-link relative text-sm uppercase transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-[var(--nav-underline-scale,0)] after:bg-[var(--accent)] after:transition-transform after:duration-300 after:content-[''] hover:text-[var(--accent)] hover:after:scale-x-100"
+          >
+            Contact
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-link relative text-sm uppercase transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-[var(--nav-underline-scale,0)] after:bg-[var(--accent)] after:transition-transform after:duration-300 after:content-[''] hover:text-[var(--accent)] hover:after:scale-x-100"
+          >
+            Resume
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <ThemeToggle />
+
+    <!-- Original Mobile Menu Toggle -->
+    <button
+      class="menu-toggle relative hidden h-8 w-8 flex-col items-center justify-center gap-[4.5px] rounded-full border border-[var(--border)] bg-[var(--surface)] p-0 text-[var(--text)] transition-all duration-300 hover:scale-105 max-md:flex"
+      id="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+    >
+      <span
+        class="block h-[1.5px] w-3.5 rounded-full bg-current transition-all duration-300"
+      ></span>
+      <span
+        class="ml-1 block h-[1.5px] w-2.5 rounded-full bg-current transition-all duration-300"
+      ></span>
+      <span
+        class="block h-[1.5px] w-3.5 rounded-full bg-current transition-all duration-300"
+      ></span>
+    </button>
+  </div>
+
+  <!-- Desktop Mega Menu -->
+  <div
+    id="discover-menu"
+    class="invisible pointer-events-none absolute left-1/2 top-[calc(100%+18px)] z-[220] w-[calc(100vw-40px)] max-w-[1600px] -translate-x-1/2 translate-y-3 overflow-hidden rounded-[28px] border border-[var(--border)] bg-[var(--bg)] opacity-0 shadow-[0_30px_100px_rgba(0,0,0,0.12)] transition-all duration-500 max-md:hidden"
+    aria-hidden="true"
+    inert
+  >
+    <!-- Background Texture -->
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(var(--border)_1px,transparent_1px)] bg-[size:22px_22px] opacity-35"
+    >
+    </div>
+
+    <div class="relative grid grid-cols-4 gap-10 p-12 max-lg:gap-6 max-lg:px-8">
+      <!-- Social -->
+      <div>
+        <p
+          class="text-xs font-bold uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Social
+        </p>
+
+        <div class="mt-5 flex flex-col items-start gap-5">
+          <a
+            href="https://github.com/moizycodes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mega-link uppercase font-bold">GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/moizy-codes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mega-link uppercase font-bold">LinkedIn</a
+          >
+          <a
+            href="https://www.instagram.com/moizycodes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mega-link uppercase font-bold">Instagram</a
+          >
+          <a
+            href="https://www.youtube.com/@moizyvlogs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mega-link uppercase font-bold">YouTube</a
+          >
+          <a
+            href="https://www.threads.net/@moizycodes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mega-link uppercase font-bold">Threads</a
+          >
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div>
+        <p
+          class="text-xs font-bold uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Explore
+        </p>
+
+        <div class="mt-5 flex flex-col items-start gap-5">
+          <a href="/skills" data-nav class="mega-link uppercase font-bold"
+            >Skills</a
+          >
+          <a href="/services" data-nav class="mega-link uppercase font-bold"
+            >Services</a
+          >
+          <a href="/experience" data-nav class="mega-link uppercase font-bold"
+            >Experience</a
+          >
+          <a href="/fiverr" data-nav class="mega-link uppercase font-bold"
+            >Fiverr</a
+          >
+          <a href="/upwork" data-nav class="mega-link uppercase font-bold"
+            >Upwork</a
+          >
+        </div>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <p
+          class="text-xs font-bold uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Resources
+        </p>
+
+        <div class="mt-5 flex flex-col items-start gap-5">
+          <a href="/projects" data-nav class="mega-link uppercase font-bold"
+            >All Projects</a
+          >
+          <a href="/case-studies" data-nav class="mega-link uppercase font-bold"
+            >Case Studies</a
+          >
+          <a href="/blog" data-nav class="mega-link uppercase font-bold">Blog</a
+          >
+          <a href="/process" data-nav class="mega-link uppercase font-bold"
+            >My Process</a
+          >
+          <a href="/faqs" data-nav class="mega-link uppercase font-bold">FAQs</a
+          >
+        </div>
+      </div>
+
+      <!-- Connect -->
+      <div>
+        <p
+          class="text-xs font-bold uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Connect
+        </p>
+
+        <div class="mt-5 flex flex-col items-start gap-5">
+          <a href="#contact" data-nav class="mega-link uppercase font-bold"
+            >Contact</a
+          >
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mega-link uppercase font-bold">Resume</a
+          >
+          <a
+            href="mailto:moizycodes.dev@gmail.com"
+            class="mega-link uppercase font-bold">Let's Talk</a
+          >
+          <a href="/availability" data-nav class="mega-link uppercase font-bold"
+            >Availability</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="relative flex items-center justify-between border-t border-[var(--border)] px-12 py-5 max-lg:px-8"
+    >
+      <p class="text-xs font-medium tracking-[0.12em] text-[var(--muted)]">
+        <span class="text-accent font-bold">moizycodes</span> — DIGITAL EXPERIENCE
+      </p>
+      <a
+        href="/contact"
+        class="text-xs font-bold uppercase tracking-[0.12em] text-[var(--accent)] transition-opacity hover:opacity-60"
+        >Have a project? Let's talk ↗</a
+      >
+    </div>
+  </div>
+</header>
+
+<!-- Original Mobile Backdrop -->
+<div
+  class="mobile-backdrop invisible fixed inset-0 z-150 bg-black/45 opacity-0 backdrop-blur-[10px] transition-all duration-500"
+  id="mobile-backdrop"
+>
+</div>
+
+<!-- Original Mobile Menu -->
+<div
+  class="mobile-menu invisible pointer-events-none fixed inset-0 z-160 h-dvh opacity-0 transition-opacity duration-400"
+  id="mobile-navigation"
+  aria-label="Mobile navigation"
+  aria-hidden="true"
+  inert
+>
+  <div
+    class="menu-inner absolute bottom-4 left-4 right-4 top-22.5 flex -translate-y-7.5 scale-[0.97] flex-col overflow-y-auto rounded-[28px] border border-[var(--border)] bg-[var(--bg)] px-7 py-7.5 pb-7 opacity-0 shadow-[0_30px_80px_rgba(0,0,0,0.18)] transition-all duration-500"
+  >
+    <nav
+      class="menu-links flex flex-1 flex-col gap-2"
+      aria-label="Mobile links"
+    >
+      <a
+        href="/"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-4.5 text-[var(--text)] opacity-0 transition-all duration-500 uppercase"
+      >
+        <span
+          class="link-index min-w-7 text-sm font-medium tracking-wider text-[var(--muted)]"
+          >01</span
+        >
+        <span
+          class="link-text text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Home</span
+        >
+      </a>
+
+      <a
+        href="/projects"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-4.5 text-[var(--text)] opacity-0 transition-all duration-500 uppercase"
+      >
+        <span
+          class="link-index min-w-7 text-sm font-medium tracking-[0.05em] text-[var(--muted)]"
+          >02</span
+        >
+        <span
+          class="link-text text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Projects</span
+        >
+      </a>
+
+      <a
+        href="/about"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-4.5 text-[var(--text)] opacity-0 transition-all duration-500 uppercase"
+      >
+        <span
+          class="link-index min-w-7 text-sm font-medium tracking-wider text-[var(--muted)]"
+          >03</span
+        >
+        <span
+          class="link-text text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >About</span
+        >
+      </a>
+
+      <a
+        href="/contact"
+        data-nav
+        class="mobile-link flex translate-y-6 items-baseline gap-5 border-b border-[var(--border)] px-2 py-4.5 text-[var(--text)] opacity-0 transition-all duration-500 uppercase"
+      >
+        <span
+          class="link-index min-w-7 text-sm font-medium tracking-wider text-[var(--muted)]"
+          >04</span
+        >
+        <span
+          class="link-text text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Contact</span
+        >
+      </a>
+
+      <a
+        href="/resume"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mobile-link flex translate-y-6 items-baseline gap-5 px-2 py-4.5 text-[var(--text)] opacity-0 transition-all duration-500 uppercase"
+      >
+        <span
+          class="link-index min-w-7 text-sm font-medium tracking-wider text-[var(--muted)]"
+          >05</span
+        >
+        <span
+          class="link-text text-[32px] font-semibold leading-[1.1] tracking-[-0.03em]"
+          >Resume</span
+        >
+      </a>
+    </nav>
+
+    <!-- Original Social Footer -->
+    <div
+      class="menu-footer mt-auto flex translate-y-5 flex-col items-center gap-5 pt-8 opacity-0 transition-all duration-500"
+    >
+      <div class="socials flex items-center justify-center gap-4">
+        <a
+          href="https://github.com/moizycodes"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          class="flex h-11 w-11 translate-y-3 scale-90 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--text)] hover:text-[var(--bg)]"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+            ></path>
+            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/moizy-codes"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          class="flex h-11 w-11 translate-y-3 scale-90 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--text)] hover:text-[var(--bg)]"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            ></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.instagram.com/moizycodes"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Instagram"
+          class="flex h-11 w-11 translate-y-3 scale-90 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface)] text-[var(--text)] opacity-0 transition-all duration-300 hover:-translate-y-1 hover:bg-[var(--text)] hover:text-[var(--bg)]"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+
+      <p class="copyright text-xs tracking-[0.04em] text-[var(--muted)]">
+        © 2026 moizycodes
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  import "../../scripts/header.ts";
+</script>
