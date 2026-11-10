@@ -1,3 +1,4 @@
+
 ---
 const principles = [
   {
@@ -5,63 +6,133 @@ const principles = [
     title: "Think before building",
     description:
       "Understand the problem first, then create solutions that serve a clear purpose.",
+    label: "THE FOUNDATION",
+    detail: "Clarity before execution",
   },
   {
     number: "02",
     title: "Quality over shortcuts",
     description:
       "Focus on maintainable code, thoughtful details and reliable functionality.",
+    label: "THE STANDARD",
+    detail: "Craft over convenience",
   },
   {
     number: "03",
     title: "Always keep learning",
     description:
       "Stay curious, explore better approaches and continuously improve.",
+    label: "THE MINDSET",
+    detail: "Growth through curiosity",
   },
 ];
 ---
 
 <section
   id="about-approach"
-  class="mx-auto w-full max-w-[1600px] px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+  class="approach-section relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20 max-sm:px-[5%]"
 >
-  <div class="mb-14">
-    <span
-      class="mb-5 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]"
-    >
-      04 / My philosophy
-    </span>
+  <!-- Section introduction -->
+  <div class="approach-reveal mb-12 grid grid-cols-[1.2fr_0.8fr] items-end gap-10 max-md:grid-cols-1 max-md:gap-6">
+    <div>
+      <span class="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]">
+        <span class="h-px w-7 bg-[var(--accent)]"></span>
+        04 / My philosophy
+      </span>
 
-    <h2
-      class="max-w-[700px] font-heading text-[clamp(44px,6vw,76px)] leading-[1.05] tracking-[-0.05em] text-[var(--text)]"
-    >
-      Good work comes from a good process.
-    </h2>
+      <h2 class="mt-5 font-heading text-[clamp(54px,9vw,116px)] font-bold uppercase leading-[0.88] tracking-[-0.075em] text-[var(--text)]">
+        A Better Way <span class="text-[var(--accent)]"> to Build. </span>
+      </h2>
+    </div>
+
+    <div class="flex max-w-85 flex-col gap-4 pb-1 md:ml-auto">
+      <span class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
+        More than writing code
+      </span>
+
+      <p class="text-sm leading-[1.85] text-[var(--muted)]">
+        Thoughtful decisions, attention to detail and a continuous drive
+        to create better digital experiences.
+      </p>
+    </div>
   </div>
 
-  <div class="grid grid-cols-3 gap-5 max-md:grid-cols-1">
-    {
-      principles.map((item) => (
-        <article class="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] max-md:min-h-[220px]">
-          <div class="flex items-center justify-between">
-            <span class="text-xs text-[var(--muted)]">{item.number}</span>
+  <!-- Principle cards -->
+  <div class="grid grid-cols-3 gap-5 max-lg:gap-3 max-md:grid-cols-1 max-md:gap-4">
+    {principles.map((item, index) => (
+      <article
+        class:list={[
+          "approach-card approach-reveal group relative flex min-h-[390px] flex-col overflow-hidden rounded-[22px] border border-[var(--border)] bg-[var(--surface)] p-7 transition-[transform,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-[var(--accent)]/60 hover:shadow-[0_18px_45px_rgba(0,0,0,0.07)] max-lg:min-h-[360px] max-lg:p-5 max-md:min-h-[320px] max-sm:rounded-[18px] max-sm:p-6",
+        ]}
+      >
+        <!-- Accent line -->
+        <span class="absolute inset-x-7 top-0 h-[2px] origin-left scale-x-0 rounded-full bg-[var(--accent)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100"></span>
 
-            <span class="text-lg text-[var(--accent)] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-              ↗
-            </span>
-          </div>
+        <!-- Card header -->
+        <div class="relative z-10 flex items-center justify-between">
+          <span class="font-heading text-xl tracking-[-0.05em] text-[var(--accent)]">
+            / {item.number}
+          </span>
 
-          <div>
-            <h3 class="font-heading text-2xl tracking-[-0.03em] text-[var(--text)]">
-              {item.title}
-            </h3>
+          <span class="rounded-full border border-[var(--border)] px-3 py-1.5 text-[9px] font-medium tracking-[0.12em] text-[var(--muted)] transition-colors duration-500 group-hover:border-[var(--accent)]/40 group-hover:text-[var(--accent)]">
+            {item.label}
+          </span>
+        </div>
 
-            <p class="mt-4 text-sm leading-[1.8] text-[var(--muted)]">
-              {item.description}
-            </p>
-          </div>
-        </article>
-      ))
-    }
+        <!-- Decorative number -->
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute right-3 top-[76px] select-none font-heading text-[150px] leading-none tracking-[-0.12em] text-[var(--text)] opacity-[0.035] transition-all duration-700 group-hover:-translate-y-2 group-hover:text-[var(--accent)] group-hover:opacity-[0.09] max-lg:text-[125px]"
+        >
+          {item.number}
+        </span>
+
+        <!-- Card content -->
+        <div class="relative z-10 mt-auto pt-24">
+          <h3 class="max-w-[300px] font-heading text-[clamp(29px,3vw,39px)] font-bold leading-[0.98] tracking-[-0.06em] text-[var(--text)] transition-colors duration-500 group-hover:text-[var(--accent)]">
+            {item.title}<span class="text-[var(--accent)]">.</span>
+          </h3>
+
+          <p class="mt-5 max-w-[320px] text-[13px] leading-[1.85] text-[var(--muted)]">
+            {item.description}
+          </p>
+        </div>
+
+        <!-- Card footer -->
+        <div class="relative z-10 mt-8 flex items-center justify-between gap-3 border-t border-[var(--border)] pt-5">
+          <span class="text-[9px] font-medium uppercase tracking-[0.14em] text-[var(--muted)]">
+            {item.detail}
+          </span>
+
+          <span class="flex size-9 shrink-0 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text)] transition-all duration-500 group-hover:rotate-45 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white">
+            <svg viewBox="0 0 16 16" fill="none" class="size-3.5" aria-hidden="true">
+              <path
+                d="M3.5 12.5L12.5 3.5M4 3.5H12.5V12"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <!-- Closing statement -->
+  <div class="approach-reveal mt-8 flex flex-wrap items-center justify-between gap-5 border-t border-[var(--border)] pt-7 max-sm:mt-6 max-sm:pt-6">
+    <p class="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+      Intentional thinking. Meaningful building.
+    </p>
+
+    <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
+      <span class="size-1.5 rounded-full bg-[var(--accent)]"></span>
+      The way I work
+    </span>
   </div>
 </section>
+
+<script>
+  import "../../scripts/about-approach.ts";
+</script>

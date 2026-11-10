@@ -35,56 +35,159 @@ const milestones = [
 ];
 ---
 
+
 <section
   id="journey"
-  class="journey-section mx-auto w-full max-w-[1600px] px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+  class="journey-section relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-32 md:px-[6%] max-md:px-[5.5%] max-md:py-24 max-sm:px-[5%] max-sm:py-20"
 >
-  <div
-    class="mb-16 flex items-end justify-between gap-8 max-md:flex-col max-md:items-start"
-  >
+  <!-- Heading -->
+  <div class="journey-reveal relative z-10 grid grid-cols-[1fr_auto] items-end gap-10 border-b border-[var(--border)] pb-16 max-md:grid-cols-1 max-md:gap-8 max-md:pb-10">
     <div>
-      <span
-        class="mb-5 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]"
-      >
+      <span class="mb-8 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)] max-sm:mb-6">
+        <span class="h-px w-8 bg-[var(--accent)]"></span>
         02 / The journey
       </span>
 
-      <h2
-        class="font-heading text-[clamp(44px,6vw,76px)] leading-none tracking-[-0.05em] text-[var(--text)]"
-      >
-        Every step shapes the craft.
+      <h2 class="max-w-225 font-heading text-[clamp(56px,9vw,120px)] font-bold uppercase leading-[0.79] tracking-[-0.085em] text-[var(--text)]">
+        Built through
+        <span class="block">every <span class="text-[var(--accent)]">step.</span></span>
       </h2>
     </div>
 
-    <p class="max-w-[300px] text-sm leading-[1.8] text-[var(--muted)]">
-      A continuous journey of learning, experimenting, building and becoming
-      better.
-    </p>
+    <div class="flex max-w-67.5 flex-col gap-5 pb-1 max-md:max-w-97.5">
+      <div class="flex items-center gap-3">
+        <span class="h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+        <span class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
+          A developer in progress
+        </span>
+      </div>
+
+      <p class="text-sm leading-[1.9] text-[var(--muted)] sm:text-base">
+        From the first line of code to building complete digital experiences.
+        Every chapter brings a new perspective.
+      </p>
+
+      <span class="font-bold text-4xl tracking-[-0.06em] text-[var(--text)]">
+        04 <span class="text-[var(--accent)]">/</span> Chapters
+      </span>
+    </div>
   </div>
 
-  <div class="border-t border-[var(--border)]">
-    {
-      milestones.map((item) => (
-        <article class="journey-item group grid grid-cols-[90px_1fr_1.2fr] gap-8 border-b border-[var(--border)] py-9 transition-colors duration-300 hover:bg-[var(--surface)]/50 max-md:grid-cols-[48px_1fr] max-md:gap-4 max-md:py-7">
-          <span class="pt-1 text-xs text-[var(--muted)]">{item.number}</span>
+  <!-- Timeline -->
+  <div class="relative mt-14 max-md:mt-10">
+    <!-- Central timeline -->
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute bottom-16 left-1/2 top-0 w-px -translate-x-1/2 bg-[var(--border)] max-md:bottom-10 max-md:left-4.25"
+    >
+      <div class="h-full w-full origin-top bg-[var(--accent)]/70"></div>
+    </div>
 
-          <div>
-            <span class="text-[10px] uppercase tracking-[0.15em] text-[var(--accent)]">
-              {item.category}
+    {
+      milestones.map((item, index) => (
+        <article
+          class="journey-item journey-reveal group relative grid grid-cols-[1fr_76px_1fr] items-center py-8 max-md:grid-cols-[36px_1fr] max-md:py-5"
+        >
+          <!-- Milestone card -->
+          <div
+            class:list={[
+              "journey-card group relative isolate min-h-75 overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-9 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-[var(--accent)]/50 hover:shadow-[0_24px_70px_rgba(0,0,0,0.07)] max-lg:min-h-80 max-lg:p-7 max-md:col-start-2 max-md:min-h-0 max-md:p-7 max-sm:rounded-[1.15rem] max-sm:p-6",
+              index % 2 === 0 ? "col-start-1" : "col-start-3",
+            ]}
+          >
+            <!-- Decorative background number -->
+            <span
+              aria-hidden="true"
+              class="pointer-events-none absolute -right-3 -top-10 -z-10 select-none font-heading text-[clamp(130px,17vw,230px)] leading-none tracking-[-0.12em] text-[var(--text)] opacity-[0.035] transition-all duration-700 group-hover:-translate-y-3 group-hover:text-[var(--accent)] group-hover:opacity-[0.09] max-sm:-right-2 max-sm:-top-5 max-sm:text-[150px]"
+            >
+              {item.number}
             </span>
 
-            <h3 class="mt-3 font-heading text-2xl tracking-[-0.03em] text-[var(--text)]">
-              {item.title}
-            </h3>
+            <!-- Accent detail -->
+            <div class="absolute left-0 top-0 h-0.5 w-0 bg-[var(--accent)] transition-all duration-700 group-hover:w-full"></div>
 
-            <p class="mt-2 text-xs text-[var(--muted)]">{item.period}</p>
+            <div class="relative flex h-full flex-col">
+              <!-- Card meta -->
+              <div class="flex items-center justify-between gap-4">
+                <span class="rounded-full border border-[var(--accent)]/25 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
+                  {item.category}
+                </span>
+
+                <span class="font-heading text-sm tracking-[-0.03em] text-[var(--muted)]">
+                  {item.number} <span class="text-[var(--accent)]">/</span> 04
+                </span>
+              </div>
+
+              <!-- Card content -->
+              <div class="mt-14 max-w-107.5 max-sm:mt-10">
+                <span class="block text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+                  {item.period}
+                </span>
+
+                <h3 class="mt-4 font-bold text-[clamp(30px,3.4vw,46px)] leading-[0.98] tracking-[-0.06em] text-[var(--text)] transition-colors duration-500 group-hover:text-[var(--accent)] max-sm:text-[34px]">
+                  {item.title}<span class="text-[var(--accent)]">.</span>
+                </h3>
+
+                <p class="mt-5 max-w-97.5 text-sm leading-[1.9] text-[var(--muted)] max-sm:text-xs">
+                  {item.description}
+                </p>
+              </div>
+
+              <!-- Card footer -->
+              <div class="mt-auto flex items-center justify-between gap-4 border-t border-[var(--border)] pt-6">
+                <span class="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+                  Development journey
+                </span>
+
+                <span class="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text)] transition-all duration-500 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white">
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    class="h-3.5 w-3.5 transition-transform duration-500 group-hover:rotate-45"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3.5 12.5L12.5 3.5M4 3.5H12.5V12"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
           </div>
 
-          <p class="max-w-[430px] text-sm leading-[1.9] text-[var(--muted)] max-md:col-start-2">
-            {item.description}
-          </p>
+          <!-- Timeline node -->
+          <div class="relative z-10 col-start-2 row-start-1 flex h-full items-center justify-center max-md:col-start-1">
+            <span class="relative flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--bg)] transition-all duration-500 group-hover:border-[var(--accent)] max-md:h-9 max-md:w-9">
+              <span class="h-2 w-2 rounded-full bg-[var(--accent)] transition-transform duration-500 group-hover:scale-[1.7]"></span>
+            </span>
+          </div>
         </article>
       ))
     }
   </div>
+
+  <!-- Closing line -->
+  <div class="journey-reveal flex items-center justify-between gap-5 border-t border-[var(--border)] pt-8 max-sm:flex-col max-sm:items-start max-sm:gap-3">
+    <span class="text-xs uppercase tracking-[0.17em] text-[var(--muted)]">
+      The journey doesn't stop here.
+    </span>
+
+    <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.17em] text-[var(--accent)]">
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]"></span>
+      Currently evolving
+    </span>
+  </div>
 </section>
+
+<script>
+  import "../../scripts/journey.ts";
+</script>
+
+
+<script>
+  import "../../scripts/journey.ts";
+</script>

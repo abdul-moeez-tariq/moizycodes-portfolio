@@ -2,78 +2,167 @@
 const expertise = [
   {
     number: "01",
-    title: "Frontend Development",
+    label: "THE INTERFACE LAYER",
+    title: "Frontend",
+    subtitle: "Where ideas become experiences.",
     description:
-      "Building responsive, accessible and engaging user interfaces.",
+      "Creating responsive, accessible and engaging interfaces with a focus on thoughtful design, performance and interaction.",
     technologies: [
       "HTML",
       "CSS",
       "JavaScript",
-      "TypeScript",
       "React",
       "Astro",
       "Tailwind CSS",
+      "Bootstrap",
+      "JQuery",
     ],
+    featured: true,
   },
   {
     number: "02",
-    title: "Backend Development",
+    label: "THE APPLICATION LAYER",
+    title: "Backend",
+    subtitle: "The logic behind the experience.",
     description:
-      "Developing application logic, APIs and server-side functionality.",
-    technologies: ["Node.js", "Express", "REST APIs", "Authentication"],
+      "Building server-side functionality, connecting services and developing APIs that power web applications.",
+    technologies: [
+      "Node.js",
+      "Express",
+      "REST APIs",
+      "Authentication",
+    ],
+    featured: false,
   },
   {
     number: "03",
+    label: "THE DATA & WORKFLOW LAYER",
     title: "Database & Tools",
+    subtitle: "Organizing data. Improving workflows.",
     description:
-      "Managing application data and maintaining efficient workflows.",
-    technologies: ["MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code"],
+      "Working with databases and development tools to manage application data, collaborate and maintain an efficient workflow.",
+    technologies: [
+      "MongoDB",
+      "PostgreSQL",
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Vercel",
+    ],
+    featured: false,
   },
 ];
 ---
 
 <section
   id="about-expertise"
-  class="mx-auto w-full max-w-[1600px] px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+  class="expertise-section relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-32 md:px-[6%] max-md:px-[5.5%] max-md:py-24 max-sm:px-[5%] max-sm:py-20"
 >
-  <div class="mb-14">
-    <span
-      class="mb-5 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]"
-    >
-      03 / What I work with
-    </span>
+  <!-- Section heading -->
+  <div class="expertise-reveal relative grid grid-cols-[1fr_300px] items-end gap-10 pb-14 max-lg:grid-cols-[1fr_250px] max-md:grid-cols-1 max-md:gap-7 max-md:pb-10">
+    <div>
+      <span class="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)] max-sm:mb-6">
+        <span class="h-px w-8 bg-[var(--accent)]"></span>
+        03 / What I work with
+      </span>
 
-    <h2
-      class="font-heading text-[clamp(44px,6vw,76px)] leading-none tracking-[-0.05em] text-[var(--text)]"
-    >
-      My technical toolkit.
-    </h2>
+      <h2 class="mt-8 max-w-212.5 font-heading text-[clamp(56px,8.5vw,112px)] font-bold uppercase leading-[0.82] tracking-[-0.08em] text-[var(--text)]">
+        My technical
+        <span class="block">toolkit<span class="text-[var(--accent)]">.</span></span>
+      </h2>
+    </div>
 
-    <p class="mt-6 max-w-[450px] text-sm leading-[1.8] text-[var(--muted)]">
-      The technologies and tools I explore to transform ideas into working
-      digital products.
-    </p>
+    <div class="flex flex-col gap-5 pb-1 max-md:max-w-97.5">
+      <span class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
+        One stack. Multiple layers.
+      </span>
+
+      <p class="text-sm leading-[1.9] text-[var(--muted)]">
+        The technologies I use to bring together interfaces, application
+        logic and data — building complete digital experiences.
+      </p>
+
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-4xl tracking-[-0.07em] text-[var(--text)]">
+          03
+        </span>
+        <span class="h-8 w-px bg-[var(--border)]"></span>
+        <span class="max-w-30 text-xs uppercase leading-[1.6] tracking-[0.12em] text-[var(--muted)]">
+          Core areas of development
+        </span>
+      </div>
+    </div>
   </div>
 
-  <div class="border-t border-[var(--border)]">
+  <!-- Stack architecture -->
+  <div class="grid grid-cols-12 gap-4 max-sm:gap-3">
     {
-      expertise.map((item) => (
-        <article class="group grid grid-cols-[70px_0.9fr_1.1fr] gap-8 border-b border-[var(--border)] py-10 transition-colors duration-300 hover:bg-[var(--surface)]/50 max-md:grid-cols-[40px_1fr] max-md:gap-4 max-md:py-8">
-          <span class="pt-2 text-xs text-[var(--muted)]">{item.number}</span>
+      expertise.map((item, index) => (
+        <article
+          class:list={[
+            "expertise-card group relative isolate flex min-h-97.5 flex-col overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--accent)]/50 max-lg:min-h-92.5 max-lg:p-7 max-md:col-span-12 max-md:min-h-0 max-md:p-7 max-sm:rounded-[1.15rem] max-sm:p-6",
+            index === 0 ? "col-span-7 max-md:col-span-12" : "",
+            index === 1 ? "col-span-5 max-md:col-span-12" : "",
+            index === 2 ? "col-span-12 min-h-75 max-lg:min-h-75 max-md:min-h-0" : "",
+          ]}
+        >
+          <!-- Decorative number -->
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-4 -top-9 -z-10 select-none font-heading text-[clamp(150px,19vw,250px)] leading-none tracking-[-0.12em] text-[var(--text)] opacity-[0.035] transition-all duration-700 group-hover:-translate-y-3 group-hover:text-[var(--accent)] group-hover:opacity-[0.09] max-sm:text-[170px]"
+          >
+            {item.number}
+          </span>
 
-          <div>
-            <h3 class="font-heading text-2xl tracking-[-0.03em] text-[var(--text)]">
-              {item.title}
+          <!-- Top metadata -->
+          <div class="flex items-center justify-between gap-4">
+            <span class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
+              {item.label}
+            </span>
+
+            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-[var(--muted)] transition-all duration-500 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white">
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                class="h-4 w-4 transition-transform duration-500 group-hover:rotate-45"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 15L15 5M6 5H15V14"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Title and description -->
+          <div class:list={[
+            "relative z-10 mt-14 max-w-120 max-sm:mt-10",
+            index === 2 ? "max-w-130" : "",
+          ]}>
+            <span class="block text-[10px] uppercase tracking-[0.14em] text-[var(--muted)]">
+              {item.subtitle}
+            </span>
+
+            <h3 class="mt-3 font-bold text-[clamp(38px,5vw,66px)] leading-[0.9] tracking-[-0.07em] text-[var(--text)] transition-colors duration-500 group-hover:text-[var(--accent)] max-sm:text-[43px]">
+              {item.title}<span class="text-[var(--accent)]">.</span>
             </h3>
 
-            <p class="mt-3 max-w-[330px] text-sm leading-[1.8] text-[var(--muted)]">
+            <p class="mt-5 max-w-97.5 text-[13px] leading-[1.9] text-[var(--muted)] max-sm:text-xs">
               {item.description}
             </p>
           </div>
 
-          <div class="flex flex-wrap content-start gap-2 max-md:col-start-2">
+          <!-- Technology list -->
+          <div class:list={[
+            "relative z-10 mt-auto flex flex-wrap gap-2 border-t border-[var(--border)] pt-7",
+            index === 2 ? "max-w-none" : "",
+          ]}>
             {item.technologies.map((technology) => (
-              <span class="rounded-full border border-[var(--border)] px-4 py-2 text-xs text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]">
+              <span class="rounded-full border border-[var(--border)] px-3.5 py-2 text-xs font-medium tracking-[0.02em] text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white max-sm:px-3 max-sm:py-1.5">
                 {technology}
               </span>
             ))}
@@ -82,4 +171,20 @@ const expertise = [
       ))
     }
   </div>
+
+  <!-- Closing statement -->
+  <div class="expertise-reveal mt-7 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border)] pt-7 max-sm:mt-5 max-sm:pt-5">
+    <span class="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
+      From frontend to backend
+    </span>
+
+    <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]"></span>
+      Building across the stack
+    </span>
+  </div>
 </section>
+
+<script>
+  import "../../scripts/about-expertise.ts";
+</script>

@@ -1,0 +1,163 @@
+<section
+  class="global-cta relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-24 md:px-[6%] max-md:px-[5.5%] max-md:py-16"
+>
+  <div
+    class="global-cta-panel relative border-y border-[var(--border)] py-10 md:py-16"
+  >
+    <!-- Top metadata -->
+    <div
+      class="global-cta-reveal mb-16 flex items-center justify-between gap-4 max-md:mb-12 max-sm:mb-9"
+    >
+      <span
+        class="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+      >
+        <span class="size-2 rounded-full bg-[var(--accent)]"></span>
+        A good place to start
+      </span>
+
+      <span
+        class="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+      >
+        Available for projects
+      </span>
+    </div>
+
+    <!-- Main headline -->
+    <div class="global-cta-main relative">
+      <div class="global-cta-mask overflow-hidden">
+        <h2
+          class="global-cta-reveal global-cta-heading whitespace-nowrap font-heading text-[clamp(3.8rem,11.5vw,10.5rem)] font-bold uppercase leading-[0.79] tracking-[-0.085em] text-[var(--text)]"
+        >
+          Let's make
+        </h2>
+      </div>
+
+      <div class="global-cta-mask mt-2 overflow-hidden">
+        <h2
+          class="global-cta-reveal global-cta-heading whitespace-nowrap font-heading text-[clamp(3.8rem,11.5vw,10.5rem)] font-bold uppercase leading-[0.79] tracking-[-0.085em] text-[var(--accent)]"
+        >
+          something
+        </h2>
+      </div>
+
+      <div class="global-cta-mask mt-2 overflow-hidden">
+        <h2
+          class="global-cta-reveal global-cta-heading whitespace-nowrap font-heading text-[clamp(3.8rem,11.5vw,10.5rem)] font-bold uppercase leading-[0.79] tracking-[-0.085em] text-[var(--text)]"
+        >
+          meaningful<span class="text-[var(--accent)]">.</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Bottom action area -->
+    <div
+      class="global-cta-reveal mt-12 flex items-end justify-between gap-6 border-t border-[var(--border)] pt-5 max-sm:mt-9 max-sm:flex-col max-sm:items-start"
+    >
+      <div class="flex flex-col items-start">
+        <span
+          class="mb-5 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+        >
+          Have something in mind?
+        </span>
+
+        <a
+          href="/contact"
+          aria-label="Let's talk — contact me"
+          class="global-cta-button group inline-flex items-center gap-3 rounded-full bg-[var(--surface)] px-7 py-[18px] text-sm font-medium tracking-[0.04em] text-[var(--text)] no-underline transition-transform duration-300 hover:scale-[1.04] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+        >
+          <span>Let's Talk</span>
+
+          <span
+            class="flex items-center justify-center text-current transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-45"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M4.16667 10H15.8333M15.8333 10L9.16667 3.33333M15.8333 10L9.16667 16.6667"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <!-- Bottom information -->
+      <div class="flex items-end justify-between gap-12 max-sm:gap-6">
+        <div class="flex flex-col gap-2">
+          <span
+            class="text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+          >
+            Based on ideas
+          </span>
+
+          <span class="text-xs font-medium text-[var(--text)]">
+            Built with purpose.
+          </span>
+        </div>
+
+        <div class="flex flex-col items-end gap-2 text-right">
+          <span
+            class="text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+          >
+            Moizycodes
+          </span>
+
+          <span
+            class="text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]"
+          >
+            Independent Developer · 2026
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background index -->
+    <span
+      class="global-cta-index pointer-events-none absolute right-0 top-[43%] -translate-y-1/2 select-none font-heading text-[clamp(8rem,19vw,17rem)] font-bold leading-none tracking-[-0.1em] text-[var(--text)] opacity-[0.025]"
+      aria-hidden="true"
+    >
+      01
+    </span>
+  </div>
+</section>
+
+<style>
+  .global-cta-mask {
+    overflow: hidden;
+  }
+
+  .global-cta-button:hover {
+    background-color: #ffffff;
+    color: #080808;
+  }
+
+  :global(.dark) .global-cta-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    .global-cta-index {
+      top: 53%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .global-cta-button,
+    .global-cta-button span {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import "../../scripts/global-cta";
+</script>

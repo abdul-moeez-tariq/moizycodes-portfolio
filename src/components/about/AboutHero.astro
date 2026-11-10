@@ -1,6 +1,6 @@
 <section
   id="about-hero"
-  class="about-hero relative isolate mx-auto flex min-h-[clamp(680px,calc(100svh-80px),950px)] w-full max-w-[1600px] flex-col overflow-hidden bg-[var(--bg)] px-[8%] pb-8 pt-10 md:px-[6%] max-md:min-h-[760px] max-md:px-[5.5%] max-sm:min-h-[720px] max-sm:px-[5%] max-sm:pb-6 max-sm:pt-8"
+  class="about-hero relative isolate mx-auto flex min-h-[clamp(640px,calc(100svh-80px),900px)] w-full max-w-[1600px] flex-col overflow-hidden bg-[var(--bg)] px-[8%] pb-8 pt-10 md:px-[6%] max-lg:min-h-[clamp(600px,calc(100svh-80px),720px)] max-lg:px-[5.5%] max-md:min-h-[clamp(580px,calc(100svh-80px),680px)] max-md:pb-6 max-md:pt-8 max-sm:min-h-[clamp(560px,calc(100svh-100px),640px)] max-sm:px-[5%] max-sm:pb-5 max-sm:pt-7"
 >
   <!-- Background portrait -->
   <div class="absolute inset-0 -z-20 overflow-hidden">
@@ -12,7 +12,7 @@
       height="1200"
       loading="eager"
       fetchpriority="high"
-      class="about-portrait h-full w-full scale-[1.1] object-cover object-[68%_center] opacity-40 transition-[opacity,transform] duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-loaded]:scale-100 [&.is-loaded]:opacity-60 max-md:object-[65%_center] max-sm:object-[62%_center] max-sm:[&.is-loaded]:opacity-40"
+      class="about-portrait h-full w-full scale-[1.1] object-cover object-[68%_center] opacity-40 transition-[opacity,transform] duration-2200 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-loaded]:scale-100 [&.is-loaded]:opacity-60 max-md:object-[65%_center] max-sm:object-[62%_center] max-sm:[&.is-loaded]:opacity-40"
     />
   </div>
 
@@ -28,11 +28,11 @@
 
   <!-- Intro label -->
   <div
-    class="about-reveal relative z-10 flex items-center justify-center gap-3 translate-y-6 opacity-0 transition-[opacity,transform] duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100"
+    class="about-reveal relative z-10 flex items-center justify-center gap-3 translate-y-6 opacity-0 transition-[opacity,transform] duration-1100 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100"
   >
     <span class="h-px w-8 bg-[var(--accent)]"></span>
     <p
-      class="m-0 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--muted)] sm:text-xs"
+      class="text-xs font-medium uppercase tracking-[0.32em] text-[var(--muted)] sm:text-sm"
     >
       Abdul Moeez Tariq
     </p>
@@ -41,16 +41,16 @@
 
   <!-- Main composition -->
   <div
-    class="relative z-10 my-auto flex w-full flex-col items-center py-16 text-center max-md:py-14 max-sm:py-12"
+    class="relative z-10 flex flex-1 w-full flex-col items-center justify-center py-6 text-center max-md:py-6 max-sm:py-5"
   >
     <p
-      class="about-reveal mb-8 translate-y-7 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--muted)] opacity-0 transition-[opacity,transform] delay-100 duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 sm:mb-10 sm:text-xs"
+      class="about-reveal mt-8 translate-y-7 font-medium uppercase tracking-[0.3em] text-[var(--muted)] opacity-0 transition-[opacity,transform] delay-100 duration-1100 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-sm:mb-5 text-xs"
     >
       Full Stack Developer
     </p>
 
     <h1
-      class="about-reveal flex w-full flex-col items-center font-[var(--font-heading)] text-[clamp(2.25rem,9.8vw,10.5rem)] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-[var(--text)] opacity-0 translate-y-10 transition-[opacity,transform] delay-150 duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-sm:text-[clamp(2rem,10.5vw,4.2rem)] max-sm:tracking-[-0.065em] max-[360px]:text-[1.85rem] max-[360px]:tracking-[-0.07em]"
+      class="about-reveal mt-8 flex w-full flex-col items-center text-[clamp(2.25rem,9.8vw,10.5rem)] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-[var(--text)] opacity-0 translate-y-10 transition-[opacity,transform] delay-150 duration-1400 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-sm:text-[clamp(2rem,10.5vw,4.2rem)] max-sm:tracking-[-0.065em] max-[360px]:text-[1.85rem] max-[360px]:tracking-[-0.07em]"
     >
       <span class="block whitespace-nowrap">The mind</span>
       <span class="block whitespace-nowrap">
@@ -59,10 +59,10 @@
     </h1>
 
     <div
-      class="about-reveal mt-10 flex w-full max-w-[510px] flex-col items-center gap-7 translate-y-7 opacity-0 transition-[opacity,transform] delay-300 duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-sm:mt-8 max-sm:gap-5"
+      class="about-reveal mt-8 flex w-full max-w-127.5 flex-col items-center gap-6 translate-y-7 opacity-0 transition-[opacity,transform] delay-300 duration-1200 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-md:mt-7 max-md:gap-5 max-sm:mt-6 max-sm:gap-4"
     >
       <p
-        class="m-0 max-w-[440px] text-center text-[13px] leading-[1.9] text-[var(--muted)] sm:text-sm md:text-base max-sm:max-w-[340px] max-sm:text-xs"
+        class="max-w-110 text-center text-[13px] leading-[1.9] text-[var(--muted)] sm:text-sm md:text-base max-sm:max-w-85 max-sm:text-xs"
       >
         I'm Abdul Moeez Tariq — a Full Stack Developer driven by curiosity,
         creativity and the challenge of turning ideas into meaningful digital
@@ -71,30 +71,46 @@
 
       <a
         href="/contact"
-        class="scroll-btn group inline-flex w-fit items-center gap-2 rounded-full bg-surface px-6 py-4 text-xs font-medium tracking-[0.04em] text-foreground no-underline transition-all duration-300 ease-out hover:scale-105 max-sm:px-5 max-sm:py-3.5"
+        class="scroll-btn group inline-flex w-fit items-center gap-2 rounded-full bg-surface p-6 text-xs font-medium tracking-[0.04em] text-foreground no-underline transition-all duration-300 ease-out hover:scale-105 max-sm:p-5"
       >
         <span>LET'S CONNECT</span>
-        <svg
-          width="13"
-          height="15"
-          viewBox="0 0 13 15"
-          fill="none"
-          aria-hidden="true"
-          class="transition-transform duration-300 group-hover:translate-y-1"
+
+        <span
+          class="flex items-center justify-center text-[var(--text)] transition-transform duration-500 ease-out group-hover:rotate-45 group-hover:text-white dark:group-hover:text-black"
         >
-          <path
-            d="M7.02722 12.6657C7.3145 12.3537 7.66169 11.9914 8.05373 11.6103C9.1898 10.5057 10.745 9.20094 12.335 8.53846L12.7196 9.46154C11.3095 10.0491 9.86474 11.2443 8.75081 12.3272C8.1993 12.8634 7.73931 13.3617 7.41747 13.7257C7.25668 13.9076 7.13071 14.0555 7.04541 14.1574C7.00277 14.2083 6.97032 14.2477 6.94878 14.2741L6.92477 14.3036L6.91909 14.3106L6.91785 14.3122L6.52727 14.8004L6.1369 14.3124L6.13545 14.3106L6.12976 14.3036L6.10575 14.2741C6.08422 14.2477 6.05177 14.0555 6.00912 14.1574C5.92383 14.0555 5.79786 13.9076 5.63707 13.7257C5.31523 13.3617 4.85524 13.3617 4.30373 12.3272C3.1898 11.2443 1.74502 10.0491 0.334961 9.46154L0.719576 8.53846C2.30951 9.20094 3.86474 10.5057 5.00081 11.6103C5.39281 11.9914 5.73996 12.3537 6.02722 12.6656V0H7.02722V12.6657Z"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="0.3"></path>
-        </svg>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_732_152)">
+              <path
+                d="M13.1794 5.87411C12.7557 5.89159 12.254 5.90228 11.7073 5.89454C10.1229 5.87229 8.1006 5.6952 6.50786 5.03934L6.88862 4.11467C8.30118 4.6963 10.1679 4.87276 11.7213 4.89471C12.4904 4.90553 13.168 4.87844 13.653 4.84863C13.8953 4.8337 14.089 4.8182 14.2214 4.80646C14.2875 4.80062 14.3383 4.7957 14.3722 4.79227L14.41 4.78838L14.419 4.78745L14.421 4.7872L15.0424 4.71817L14.9734 5.33927L14.9731 5.34157L14.9722 5.35054L14.9683 5.38838C14.9649 5.42227 14.96 5.47308 14.9541 5.53923C14.9424 5.67159 14.9269 5.86524 14.9119 6.10756C14.8821 6.59253 14.855 7.27014 14.8659 8.03927C14.8878 9.59266 15.0643 11.4594 15.6459 12.8719L14.7212 13.2527C14.0654 11.66 13.8883 9.63767 13.866 8.05328C13.8583 7.50662 13.869 7.00496 13.8865 6.58129L4.93053 15.5372L4.22342 14.8301L13.1794 5.87411Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                fill="currentColor"
+                stroke="currentColor"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_732_152">
+                <rect
+                  width="13"
+                  height="15"
+                  fill="white"
+                  transform="translate(9.19238 19.7991) rotate(-135)"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </span>
       </a>
     </div>
   </div>
 
   <!-- Bottom information -->
   <div
-    class="about-reveal relative z-10 mt-8 flex items-end justify-between gap-5 border-t border-[var(--border)]/70 pt-5 translate-y-6 opacity-0 transition-[opacity,transform] delay-200 duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-md:mt-7 max-sm:gap-3 max-sm:pt-4"
+    class="about-reveal relative z-10 mt-6 flex flex-wrap items-end justify-between gap-5 border-t border-[var(--border)]/70 pt-5 translate-y-6 opacity-0 transition-[opacity,transform] delay-200 duration-1100 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-md:mt-5 max-md:items-center max-md:justify-center max-md:text-center max-sm:mt-4 max-sm:gap-3 max-sm:pt-4"
   >
     <div>
       <p class="m-0 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
