@@ -1,16 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-// import AboutHero from "../components/about/AboutHero.astro";
-// import Biography from "../components/about/Biography.astro";
-// import Journey from "../components/about/Journey.astro";
+import AboutHero from "../components/about/AboutHero.astro";
+import Biography from "../components/about/Biography.astro";
+import Journey from "../components/about/Journey.astro";
+import AboutExpertise from "../components/about/AboutExpertise.astro";
+import AboutApproach from "../components/about/AboutApproach.astro";
+import AboutCTA from "../components/about/AboutCTA.astro";
 ---
 
 <MainLayout
   title="About | moizycodes"
   description="Learn more about me, my journey, and my passion for web development."
 >
-  <!-- <AboutHero />
-  <Biography />
-  <Journey /> -->
+  <main>
+    <AboutHero />
+    <Biography />
+    <Journey />
+    <AboutExpertise />
+    <AboutApproach />
+    <AboutCTA />
+  </main>
 </MainLayout>

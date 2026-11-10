@@ -68,7 +68,10 @@ moizycodes-portfolio/
 │ │ ├── about/
 │ │ │ ├── AboutHero.astro
 │ │ │ ├── Biography.astro
-│ │ │ └── Journey.astro
+│ │ │ ├── Journey.astro
+│ │ │ ├── AboutExpertise.astro
+│ │ │ ├── AboutApproach.astro
+│ │ │ └── AboutCTA.astro
 │ │ │
 │ │ ├── projects/
 │ │ │ ├── ProjectsHero.astro

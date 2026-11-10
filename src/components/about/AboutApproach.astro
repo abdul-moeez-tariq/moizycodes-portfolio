@@ -1,0 +1,67 @@
+---
+const principles = [
+  {
+    number: "01",
+    title: "Think before building",
+    description:
+      "Understand the problem first, then create solutions that serve a clear purpose.",
+  },
+  {
+    number: "02",
+    title: "Quality over shortcuts",
+    description:
+      "Focus on maintainable code, thoughtful details and reliable functionality.",
+  },
+  {
+    number: "03",
+    title: "Always keep learning",
+    description:
+      "Stay curious, explore better approaches and continuously improve.",
+  },
+];
+---
+
+<section
+  id="about-approach"
+  class="mx-auto w-full max-w-[1600px] px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  <div class="mb-14">
+    <span
+      class="mb-5 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]"
+    >
+      04 / My philosophy
+    </span>
+
+    <h2
+      class="max-w-[700px] font-heading text-[clamp(44px,6vw,76px)] leading-[1.05] tracking-[-0.05em] text-[var(--text)]"
+    >
+      Good work comes from a good process.
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-3 gap-5 max-md:grid-cols-1">
+    {
+      principles.map((item) => (
+        <article class="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] max-md:min-h-[220px]">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-[var(--muted)]">{item.number}</span>
+
+            <span class="text-lg text-[var(--accent)] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+              ↗
+            </span>
+          </div>
+
+          <div>
+            <h3 class="font-heading text-2xl tracking-[-0.03em] text-[var(--text)]">
+              {item.title}
+            </h3>
+
+            <p class="mt-4 text-sm leading-[1.8] text-[var(--muted)]">
+              {item.description}
+            </p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

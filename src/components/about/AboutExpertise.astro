@@ -1,0 +1,85 @@
+---
+const expertise = [
+  {
+    number: "01",
+    title: "Frontend Development",
+    description:
+      "Building responsive, accessible and engaging user interfaces.",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Astro",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    number: "02",
+    title: "Backend Development",
+    description:
+      "Developing application logic, APIs and server-side functionality.",
+    technologies: ["Node.js", "Express", "REST APIs", "Authentication"],
+  },
+  {
+    number: "03",
+    title: "Database & Tools",
+    description:
+      "Managing application data and maintaining efficient workflows.",
+    technologies: ["MongoDB", "PostgreSQL", "Git", "GitHub", "VS Code"],
+  },
+];
+---
+
+<section
+  id="about-expertise"
+  class="mx-auto w-full max-w-[1600px] px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  <div class="mb-14">
+    <span
+      class="mb-5 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]"
+    >
+      03 / What I work with
+    </span>
+
+    <h2
+      class="font-heading text-[clamp(44px,6vw,76px)] leading-none tracking-[-0.05em] text-[var(--text)]"
+    >
+      My technical toolkit.
+    </h2>
+
+    <p class="mt-6 max-w-[450px] text-sm leading-[1.8] text-[var(--muted)]">
+      The technologies and tools I explore to transform ideas into working
+      digital products.
+    </p>
+  </div>
+
+  <div class="border-t border-[var(--border)]">
+    {
+      expertise.map((item) => (
+        <article class="group grid grid-cols-[70px_0.9fr_1.1fr] gap-8 border-b border-[var(--border)] py-10 transition-colors duration-300 hover:bg-[var(--surface)]/50 max-md:grid-cols-[40px_1fr] max-md:gap-4 max-md:py-8">
+          <span class="pt-2 text-xs text-[var(--muted)]">{item.number}</span>
+
+          <div>
+            <h3 class="font-heading text-2xl tracking-[-0.03em] text-[var(--text)]">
+              {item.title}
+            </h3>
+
+            <p class="mt-3 max-w-[330px] text-sm leading-[1.8] text-[var(--muted)]">
+              {item.description}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap content-start gap-2 max-md:col-start-2">
+            {item.technologies.map((technology) => (
+              <span class="rounded-full border border-[var(--border)] px-4 py-2 text-xs text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:text-[var(--accent)]">
+                {technology}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

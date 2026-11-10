@@ -1,0 +1,90 @@
+---
+const milestones = [
+  {
+    number: "01",
+    period: "The beginning",
+    title: "Discovering the web",
+    description:
+      "Started exploring how websites work, learning the fundamentals of the web and developing an interest in building things online.",
+    category: "FOUNDATION",
+  },
+  {
+    number: "02",
+    period: "Building the fundamentals",
+    title: "Learning through practice",
+    description:
+      "Focused on HTML, CSS, JavaScript and responsive layouts while experimenting with different ideas and small projects.",
+    category: "LEARNING",
+  },
+  {
+    number: "03",
+    period: "Expanding the skillset",
+    title: "Moving into full stack",
+    description:
+      "Explored frontend frameworks, backend development, APIs and databases to understand the complete development process.",
+    category: "DEVELOPMENT",
+  },
+  {
+    number: "04",
+    period: "The ongoing journey",
+    title: "Building better experiences",
+    description:
+      "Continuously refining technical skills, exploring modern tools and creating more thoughtful digital products.",
+    category: "GROWTH",
+  },
+];
+---
+
+<section
+  id="journey"
+  class="journey-section mx-auto w-full max-w-[1600px] px-[8%] py-28 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  <div
+    class="mb-16 flex items-end justify-between gap-8 max-md:flex-col max-md:items-start"
+  >
+    <div>
+      <span
+        class="mb-5 block text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)]"
+      >
+        02 / The journey
+      </span>
+
+      <h2
+        class="font-heading text-[clamp(44px,6vw,76px)] leading-none tracking-[-0.05em] text-[var(--text)]"
+      >
+        Every step shapes the craft.
+      </h2>
+    </div>
+
+    <p class="max-w-[300px] text-sm leading-[1.8] text-[var(--muted)]">
+      A continuous journey of learning, experimenting, building and becoming
+      better.
+    </p>
+  </div>
+
+  <div class="border-t border-[var(--border)]">
+    {
+      milestones.map((item) => (
+        <article class="journey-item group grid grid-cols-[90px_1fr_1.2fr] gap-8 border-b border-[var(--border)] py-9 transition-colors duration-300 hover:bg-[var(--surface)]/50 max-md:grid-cols-[48px_1fr] max-md:gap-4 max-md:py-7">
+          <span class="pt-1 text-xs text-[var(--muted)]">{item.number}</span>
+
+          <div>
+            <span class="text-[10px] uppercase tracking-[0.15em] text-[var(--accent)]">
+              {item.category}
+            </span>
+
+            <h3 class="mt-3 font-heading text-2xl tracking-[-0.03em] text-[var(--text)]">
+              {item.title}
+            </h3>
+
+            <p class="mt-2 text-xs text-[var(--muted)]">{item.period}</p>
+          </div>
+
+          <p class="max-w-[430px] text-sm leading-[1.9] text-[var(--muted)] max-md:col-start-2">
+            {item.description}
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,132 @@
+<section
+  id="about-hero"
+  class="about-hero relative isolate mx-auto flex min-h-[clamp(680px,calc(100svh-80px),950px)] w-full max-w-[1600px] flex-col overflow-hidden bg-[var(--bg)] px-[8%] pb-8 pt-10 md:px-[6%] max-md:min-h-[760px] max-md:px-[5.5%] max-sm:min-h-[720px] max-sm:px-[5%] max-sm:pb-6 max-sm:pt-8"
+>
+  <!-- Background portrait -->
+  <div class="absolute inset-0 -z-20 overflow-hidden">
+    <img
+      src="/images/about/about-portrait.webp"
+      alt=""
+      aria-hidden="true"
+      width="1600"
+      height="1200"
+      loading="eager"
+      fetchpriority="high"
+      class="about-portrait h-full w-full scale-[1.1] object-cover object-[68%_center] opacity-40 transition-[opacity,transform] duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-loaded]:scale-100 [&.is-loaded]:opacity-60 max-md:object-[65%_center] max-sm:object-[62%_center] max-sm:[&.is-loaded]:opacity-40"
+    />
+  </div>
+
+  <!-- Cinematic image overlays -->
+  <div
+    class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--bg)_0%,color-mix(in_srgb,var(--bg)_94%,transparent)_19%,color-mix(in_srgb,var(--bg)_78%,transparent)_39%,color-mix(in_srgb,var(--bg)_35%,transparent)_72%,color-mix(in_srgb,var(--bg)_20%,transparent)_100%)] max-md:bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_88%,transparent)_0%,color-mix(in_srgb,var(--bg)_65%,transparent)_100%)]"
+  >
+  </div>
+  <div
+    class="absolute inset-0 -z-10 bg-[linear-gradient(0deg,var(--bg)_0%,transparent_22%,transparent_76%,var(--bg)_100%)]"
+  >
+  </div>
+
+  <!-- Intro label -->
+  <div
+    class="about-reveal relative z-10 flex items-center justify-center gap-3 translate-y-6 opacity-0 transition-[opacity,transform] duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100"
+  >
+    <span class="h-px w-8 bg-[var(--accent)]"></span>
+    <p
+      class="m-0 text-[10px] font-medium uppercase tracking-[0.32em] text-[var(--muted)] sm:text-xs"
+    >
+      Abdul Moeez Tariq
+    </p>
+    <span class="h-px w-8 bg-[var(--accent)]"></span>
+  </div>
+
+  <!-- Main composition -->
+  <div
+    class="relative z-10 my-auto flex w-full flex-col items-center py-16 text-center max-md:py-14 max-sm:py-12"
+  >
+    <p
+      class="about-reveal mb-8 translate-y-7 text-[10px] font-medium uppercase tracking-[0.3em] text-[var(--muted)] opacity-0 transition-[opacity,transform] delay-100 duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 sm:mb-10 sm:text-xs"
+    >
+      Full Stack Developer
+    </p>
+
+    <h1
+      class="about-reveal flex w-full flex-col items-center font-[var(--font-heading)] text-[clamp(2.25rem,9.8vw,10.5rem)] font-bold uppercase leading-[0.84] tracking-[-0.075em] text-[var(--text)] opacity-0 translate-y-10 transition-[opacity,transform] delay-150 duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-sm:text-[clamp(2rem,10.5vw,4.2rem)] max-sm:tracking-[-0.065em] max-[360px]:text-[1.85rem] max-[360px]:tracking-[-0.07em]"
+    >
+      <span class="block whitespace-nowrap">The mind</span>
+      <span class="block whitespace-nowrap">
+        Behind the <span class="text-[var(--accent)]">build.</span>
+      </span>
+    </h1>
+
+    <div
+      class="about-reveal mt-10 flex w-full max-w-[510px] flex-col items-center gap-7 translate-y-7 opacity-0 transition-[opacity,transform] delay-300 duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-sm:mt-8 max-sm:gap-5"
+    >
+      <p
+        class="m-0 max-w-[440px] text-center text-[13px] leading-[1.9] text-[var(--muted)] sm:text-sm md:text-base max-sm:max-w-[340px] max-sm:text-xs"
+      >
+        I'm Abdul Moeez Tariq — a Full Stack Developer driven by curiosity,
+        creativity and the challenge of turning ideas into meaningful digital
+        experiences.
+      </p>
+
+      <a
+        href="/contact"
+        class="scroll-btn group inline-flex w-fit items-center gap-2 rounded-full bg-surface px-6 py-4 text-xs font-medium tracking-[0.04em] text-foreground no-underline transition-all duration-300 ease-out hover:scale-105 max-sm:px-5 max-sm:py-3.5"
+      >
+        <span>LET'S CONNECT</span>
+        <svg
+          width="13"
+          height="15"
+          viewBox="0 0 13 15"
+          fill="none"
+          aria-hidden="true"
+          class="transition-transform duration-300 group-hover:translate-y-1"
+        >
+          <path
+            d="M7.02722 12.6657C7.3145 12.3537 7.66169 11.9914 8.05373 11.6103C9.1898 10.5057 10.745 9.20094 12.335 8.53846L12.7196 9.46154C11.3095 10.0491 9.86474 11.2443 8.75081 12.3272C8.1993 12.8634 7.73931 13.3617 7.41747 13.7257C7.25668 13.9076 7.13071 14.0555 7.04541 14.1574C7.00277 14.2083 6.97032 14.2477 6.94878 14.2741L6.92477 14.3036L6.91909 14.3106L6.91785 14.3122L6.52727 14.8004L6.1369 14.3124L6.13545 14.3106L6.12976 14.3036L6.10575 14.2741C6.08422 14.2477 6.05177 14.0555 6.00912 14.1574C5.92383 14.0555 5.79786 13.9076 5.63707 13.7257C5.31523 13.3617 4.85524 13.3617 4.30373 12.3272C3.1898 11.2443 1.74502 10.0491 0.334961 9.46154L0.719576 8.53846C2.30951 9.20094 3.86474 10.5057 5.00081 11.6103C5.39281 11.9914 5.73996 12.3537 6.02722 12.6656V0H7.02722V12.6657Z"
+            fill="currentColor"
+            stroke="currentColor"
+            stroke-width="0.3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom information -->
+  <div
+    class="about-reveal relative z-10 mt-8 flex items-end justify-between gap-5 border-t border-[var(--border)]/70 pt-5 translate-y-6 opacity-0 transition-[opacity,transform] delay-200 duration-[1100ms] ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-md:mt-7 max-sm:gap-3 max-sm:pt-4"
+  >
+    <div>
+      <p class="m-0 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
+        My approach
+      </p>
+      <p class="mb-0 mt-2 text-xs font-medium text-[var(--text)] sm:text-sm">
+        Think deeply. Build intentionally.
+      </p>
+    </div>
+
+    <a
+      href="#biography"
+      class="group inline-flex shrink-0 items-center gap-2 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--muted)] no-underline transition-colors duration-300 hover:text-[var(--accent)] sm:text-xs"
+    >
+      Discover my story
+      <svg
+        class="h-4 w-4 transition-transform duration-500 group-hover:translate-y-1"
+        viewBox="0 0 20 20"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M10 3V16M5 11L10 16L15 11"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<script>
+  import "../../scripts/about-hero.ts";
+</script>
