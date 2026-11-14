@@ -26,22 +26,36 @@ const {
 
     <title>{title}</title>
 
-    <script is:inline>
+
+<script is:inline>
+  (() => {
+    function applySavedTheme() {
       try {
         const savedTheme = localStorage.getItem("theme");
         const systemDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
+          "(prefers-color-scheme: dark)"
         ).matches;
 
-        const theme = savedTheme || (systemDark ? "dark" : "light");
+        const theme =
+          savedTheme || (systemDark ? "dark" : "light");
 
-        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.documentElement.classList.toggle(
+          "dark",
+          theme === "dark"
+        );
       } catch {
         document.documentElement.classList.add("dark");
       }
+    }
 
-      console.log("FULL PAGE RELOAD");
-    </script>
+    // Initial page load
+    applySavedTheme();
+
+    // Astro client-side navigation
+    document.addEventListener("astro:after-swap", applySavedTheme);
+    document.addEventListener("astro:page-load", applySavedTheme);
+  })();
+</script>
   </head>
 
   <body>

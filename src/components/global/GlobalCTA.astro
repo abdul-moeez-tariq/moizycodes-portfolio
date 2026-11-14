@@ -9,14 +9,14 @@
       class="global-cta-reveal mb-16 flex items-center justify-between gap-4 max-md:mb-12 max-sm:mb-9"
     >
       <span
-        class="flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+        class="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--accent)]"
       >
         <span class="size-2 rounded-full bg-[var(--accent)]"></span>
         A good place to start
       </span>
 
       <span
-        class="text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+        class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]"
       >
         Available for projects
       </span>
@@ -55,45 +55,54 @@
     >
       <div class="flex flex-col items-start">
         <span
-          class="mb-5 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
+          class="mb-5 text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]"
         >
           Have something in mind?
         </span>
 
         <a
-          href="/contact"
-          aria-label="Let's talk — contact me"
-          class="global-cta-button group inline-flex items-center gap-3 rounded-full bg-[var(--surface)] px-7 py-[18px] text-sm font-medium tracking-[0.04em] text-[var(--text)] no-underline transition-transform duration-300 hover:scale-[1.04] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
-        >
-          <span>Let's Talk</span>
+      href="/contact"
+      class="scroll-btn group mt-2 uppercase inline-flex items-center gap-2 rounded-full bg-[var(--surface)] px-6 py-4 text-xs font-medium tracking-[0.04em] text-[var(--text)] no-underline transition-all duration-300 hover:scale-[1.02]"
+    >
+      <span>Let's Talk</span>
 
-          <span
-            class="flex items-center justify-center text-current transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-45"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M4.16667 10H15.8333M15.8333 10L9.16667 3.33333M15.8333 10L9.16667 16.6667"
-                stroke="currentColor"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-          </span>
-        </a>
+      <span
+        class="flex items-center justify-center text-[var(--text)] transition-transform duration-500 ease-out group-hover:rotate-45 group-hover:text-white dark:group-hover:text-black"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clip-path="url(#clip0_732_152)">
+            <path
+              d="M13.1794 5.87411C12.7557 5.89159 12.254 5.90228 11.7073 5.89454C10.1229 5.87229 8.1006 5.6952 6.50786 5.03934L6.88862 4.11467C8.30118 4.6963 10.1679 4.87276 11.7213 4.89471C12.4904 4.90553 13.168 4.87844 13.653 4.84863C13.8953 4.8337 14.089 4.8182 14.2214 4.80646C14.2875 4.80062 14.3383 4.7957 14.3722 4.79227L14.41 4.78838L14.419 4.78745L14.421 4.7872L15.0424 4.71817L14.9734 5.33927L14.9731 5.34157L14.9722 5.35054L14.9683 5.38838C14.9649 5.42227 14.96 5.47308 14.9541 5.53923C14.9424 5.67159 14.9269 5.86524 14.9119 6.10756C14.8821 6.59253 14.855 7.27014 14.8659 8.03927C14.8878 9.59266 15.0643 11.4594 15.6459 12.8719L14.7212 13.2527C14.0654 11.66 13.8883 9.63767 13.866 8.05328C13.8583 7.50662 13.869 7.00496 13.8865 6.58129L4.93053 15.5372L4.22342 14.8301L13.1794 5.87411Z"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              fill="currentColor"
+              stroke="currentColor"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0_732_152">
+              <rect
+                width="13"
+                height="15"
+                fill="white"
+                transform="translate(9.19238 19.7991) rotate(-135)"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </span>
+    </a>
       </div>
 
       <!-- Bottom information -->
       <div class="flex items-end justify-between gap-12 max-sm:gap-6">
         <div class="flex flex-col gap-2">
           <span
-            class="text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+            class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
           >
             Based on ideas
           </span>
@@ -105,15 +114,15 @@
 
         <div class="flex flex-col items-end gap-2 text-right">
           <span
-            class="text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--muted)]"
+            class="text-sm font-medium tracking-[0.16em] text-[var(--accent)]"
           >
-            Moizycodes
+            moizycodes
           </span>
 
           <span
-            class="text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]"
+            class="text-xs uppercase tracking-[0.16em] text-[var(--muted)]"
           >
-            Independent Developer · 2026
+            Freelance Developer · 2026
           </span>
         </div>
       </div>
@@ -124,7 +133,7 @@
       class="global-cta-index pointer-events-none absolute right-0 top-[43%] -translate-y-1/2 select-none font-heading text-[clamp(8rem,19vw,17rem)] font-bold leading-none tracking-[-0.1em] text-[var(--text)] opacity-[0.025]"
       aria-hidden="true"
     >
-      01
+      moizycodes
     </span>
   </div>
 </section>
