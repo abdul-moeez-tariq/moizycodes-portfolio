@@ -113,33 +113,41 @@
     class="about-reveal relative z-10 mt-6 flex flex-wrap items-end justify-between gap-5 border-t border-[var(--border)]/70 pt-5 translate-y-6 opacity-0 transition-[opacity,transform] delay-200 duration-1100 ease-[cubic-bezier(0.16,1,0.3,1)] [&.is-visible]:translate-y-0 [&.is-visible]:opacity-100 max-md:mt-5 max-md:items-center max-md:justify-center max-md:text-center max-sm:mt-4 max-sm:gap-3 max-sm:pt-4"
   >
     <div>
-      <p class="m-0 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)]">
+      <p class="text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
         My approach
       </p>
-      <p class="mb-0 mt-2 text-xs font-medium text-[var(--text)] sm:text-sm">
+      <p class="mt-2 font-medium text-[var(--text)] text-sm">
         Think deeply. Build intentionally.
       </p>
     </div>
 
-    <a
-      href="#biography"
-      class="group inline-flex shrink-0 items-center gap-2 text-[10px] font-medium uppercase tracking-[0.14em] text-[var(--muted)] no-underline transition-colors duration-300 hover:text-[var(--accent)] sm:text-xs"
+    
+<a
+  href="#biography"
+  class="group inline-flex shrink-0 items-center gap-3 text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent)] no-underline transition-colors duration-300 hover:text-[var(--accent)]"
+>
+  Discover my story
+
+  <span
+    class="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text)] transition-[background-color,border-color,color,transform] duration-500 group-hover:translate-y-1 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white"
+  >
+    <svg
+      class="h-4 w-4"
+      viewBox="0 0 20 20"
+      fill="none"
+      aria-hidden="true"
     >
-      Discover my story
-      <svg
-        class="h-4 w-4 transition-transform duration-500 group-hover:translate-y-1"
-        viewBox="0 0 20 20"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M10 3V16M5 11L10 16L15 11"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path>
-      </svg>
-    </a>
+      <path
+        d="M10 3V16M5 11L10 16L15 11"
+        stroke="currentColor"
+        stroke-width="1.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+</a>
+
   </div>
 </section>
 

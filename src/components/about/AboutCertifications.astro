@@ -1,0 +1,234 @@
+---
+const certificates = [
+  {
+    number: "01",
+    title: "Front-End Developer Intern",
+    company: "Creation Next Inc.",
+    period: "January, 2025 — April, 2025",
+    category: "Professional Internship",
+    description:
+      "Completed a 3-month internship focused on building responsive user interfaces using HTML, CSS, JavaScript, Bootstrap and Tailwind CSS.",
+    status: "Completed",
+  },
+
+  // Add your verified certificates here.
+  // Keep published: false until you provide the actual details.
+  {
+    number: "02",
+    title: "",
+    company: "",
+    period: "",
+    category: "Professional Certification",
+    description: "",
+    status: "Completed",
+    published: false,
+  },
+  {
+    number: "03",
+    title: "",
+    company: "",
+    period: "",
+    category: "Professional Certification",
+    description: "",
+    status: "Completed",
+    published: false,
+  },
+  {
+    number: "04",
+    title: "",
+    company: "",
+    period: "",
+    category: "Professional Certification",
+    description: "",
+    status: "Completed",
+    published: false,
+  },
+  {
+    number: "05",
+    title: "",
+    company: "",
+    period: "",
+    category: "Professional Certification",
+    description: "",
+    status: "Completed",
+    published: false,
+  },
+];
+
+const visibleCertificates = certificates.filter(
+  (certificate) => certificate.title && certificate.company && certificate.published !== false,
+);
+---
+
+<section
+  id="about-certifications"
+  aria-labelledby="certifications-heading"
+  class="relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-24 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  
+<!-- Heading -->
+<div
+  data-certification-reveal
+  class="mb-20 grid grid-cols-[minmax(0,1.5fr)_minmax(240px,0.7fr)] items-end gap-10 max-xl:grid-cols-[minmax(0,1.3fr)_minmax(220px,0.7fr)] max-lg:grid-cols-1 max-lg:gap-8 max-lg:text-center max-md:mb-14 max-md:gap-6"
+>
+  <div class="min-w-0">
+    <div class="mb-7 flex items-center gap-4 max-lg:justify-center max-md:mb-5">
+      <span class="h-px w-10 shrink-0 bg-[var(--accent)]"></span>
+      <span
+        class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent)]"
+      >
+        05 / Learning & Recognition
+      </span>
+    </div>
+
+    <h2
+      id="certifications-heading"
+      class="whitespace-nowrap text-[clamp(3rem,7.1vw,7.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.085em] text-[var(--text)] max-lg:text-[clamp(3.5rem,10vw,6rem)] max-md:text-[clamp(2.5rem,10.5vw,4.5rem)] max-sm:text-[clamp(1.9rem,9.5vw,3rem)]"
+    >
+      CERTIFICATIONS<span class="text-[var(--accent)]">.</span>
+    </h2>
+  </div>
+
+  <div
+    class="flex min-w-0 flex-col items-start gap-5 pb-2 max-lg:mx-auto max-lg:max-w-xl max-lg:items-center max-lg:pb-0"
+  >
+    <p
+      class="max-w-md font-[var(--font-primary-family)] text-[14px] leading-[1.9] text-[var(--muted)] max-lg:text-center max-md:text-[13px]"
+    >
+      A collection of milestones, learning experiences and professional
+      recognition that reflects my commitment to continuous growth.
+    </p>
+
+    <div class="flex items-center gap-3">
+      <span
+        class="font-[var(--font-primary-family)] text-[2.5rem] font-semibold leading-none tracking-[-0.07em] text-[var(--text)]"
+      >
+        {String(visibleCertificates.length).padStart(2, "0")}
+      </span>
+
+      <span
+        class="max-w-[90px] font-[var(--font-primary-family)] text-[9px] font-semibold uppercase leading-[1.6] tracking-[0.16em] text-[var(--muted)]"
+      >
+        Verified credentials
+      </span>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Certificate list -->
+  <div class="flex flex-col">
+    {visibleCertificates.map((certificate, index) => (
+      <article
+        data-certification-reveal
+        class="certificate-card group relative grid grid-cols-[100px_minmax(0,1fr)_auto] items-center gap-10 overflow-hidden border-t border-[var(--border)] py-10 transition-[padding,background-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[var(--surface)] hover:px-7 max-lg:grid-cols-[75px_minmax(0,1fr)_auto] max-lg:gap-7 max-md:grid-cols-[48px_minmax(0,1fr)] max-md:gap-5 max-md:py-8 max-md:hover:px-3"
+      >
+        <!-- Number -->
+        <div class="relative flex h-full flex-col justify-between">
+          <span
+            class="text-xs font-semibold tracking-[0.15em] text-[var(--accent)] transition-colors duration-500"
+          >
+            /{certificate.number}
+          </span>
+
+          <span
+            class="mt-8 h-8 w-px origin-top bg-[var(--border)] transition-transform duration-700 group-hover:scale-y-150 max-md:hidden"
+          ></span>
+        </div>
+
+        <!-- Main information -->
+        <div class="min-w-0">
+          <div class="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span
+              class="font-[var(--font-primary-family)] text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]"
+            >
+              {certificate.category}
+            </span>
+
+            <span class="h-1 w-1 rounded-full bg-[var(--muted)]"></span>
+
+            <span
+              class="text-xs font-medium uppercase tracking-[0.12em] text-[var(--accent)]"
+            >
+              {certificate.status}
+            </span>
+          </div>
+
+          <h3
+            class="max-w-3xl font-[var(--font-heading)] text-[clamp(1.8rem,3.6vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.055em] text-[var(--text)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 max-md:text-[clamp(1.65rem,7vw,2.4rem)]"
+          >
+            {certificate.title}
+          </h3>
+
+          <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span
+              class="font-[var(--font-primary-family)] text-xs font-semibold text-[var(--text)]"
+            >
+              {certificate.company}
+            </span>
+
+            <span
+              class="font-[var(--font-primary-family)] text-xs text-[var(--muted)]"
+            >
+              {certificate.period}
+            </span>
+          </div>
+
+          <p
+            class="mt-5 max-w-2xl font-[var(--font-primary-family)] text-xs leading-[1.9] text-[var(--muted)] max-md:text-[11px]"
+          >
+            {certificate.description}
+          </p>
+        </div>
+
+        <!-- Credential mark -->
+        <div
+          class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[var(--border)] transition-[transform,border-color,background-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-12 group-hover:scale-110 group-hover:border-[var(--text)] group-hover:bg-[var(--text)] max-md:col-start-2 max-md:row-start-2 max-md:mt-1 max-md:h-11 max-md:w-11"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-6 w-6 text-[var(--text)] transition-colors duration-500 group-hover:text-[var(--bg)] max-md:h-5 max-md:w-5"
+          >
+            <path
+              d="M12 3L14.4 5.1L17.6 5.3L18.4 8.4L20.8 10.5L19.6 13.5L20 16.7L17.1 18.2L15.5 21L12 20.2L8.5 21L6.9 18.2L4 16.7L4.4 13.5L3.2 10.5L5.6 8.4L6.4 5.3L9.6 5.1L12 3Z"
+              stroke="currentColor"
+              stroke-width="1.3"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.5 12L10.7 14.2L15.5 9.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <!-- Closing note -->
+  <div
+    data-certification-reveal
+    class="mt-10 flex items-center justify-between gap-6 max-md:flex-col max-md:items-center max-md:text-center"
+  >
+    <p
+      class="font-[var(--font-primary-family)] text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]"
+    >
+      Always learning. Always evolving.
+    </p>
+
+    <span
+      class="font-[var(--font-primary-family)] text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]"
+    >
+      Growth is a continuous process.
+    </span>
+  </div>
+</section>
+
+<script>
+  import "../../scripts/about-certifications";
+</script>

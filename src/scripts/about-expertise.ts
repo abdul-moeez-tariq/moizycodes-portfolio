@@ -6,21 +6,28 @@ type ExpertiseAnimationState = {
 };
 
 let expertiseObserver: IntersectionObserver | null = null;
-let expertiseStates = new Map<HTMLElement, ExpertiseAnimationState>();
 
-function cleanupExpertise(): void {
+const expertiseStates = new Map<HTMLElement, ExpertiseAnimationState>();
+
+const cleanupExpertise = (): void => {
     expertiseObserver?.disconnect();
     expertiseObserver = null;
 
     expertiseStates.forEach(({ animation, timer }) => {
-        if (timer !== null) window.clearTimeout(timer);
+        if (timer !== null) {
+            window.clearTimeout(timer);
+        }
+
         animation.cancel();
     });
 
     expertiseStates.clear();
-}
+};
 
-function showExpertiseElement(element: HTMLElement, index: number): void {
+const showExpertiseElement = (
+    element: HTMLElement,
+    index: number,
+): void => {
     const state = expertiseStates.get(element);
 
     if (!state || state.visible) return;
@@ -47,10 +54,10 @@ function showExpertiseElement(element: HTMLElement, index: number): void {
 
         state.animation.playbackRate = 1;
         state.animation.play();
-    }, Math.min(index * 120, 360));
-}
+    }, Math.min(index * 110, 440));
+};
 
-function hideExpertiseElement(element: HTMLElement): void {
+const hideExpertiseElement = (element: HTMLElement): void => {
     const state = expertiseStates.get(element);
 
     if (!state || !state.visible) return;
@@ -69,16 +76,17 @@ function hideExpertiseElement(element: HTMLElement): void {
 
     state.animation.playbackRate = -1;
     state.animation.play();
-}
+};
 
-function initAboutExpertise(): void {
+const initAboutExpertise = (): void => {
     cleanupExpertise();
 
     const section = document.querySelector<HTMLElement>("#about-expertise");
+
     if (!section) return;
 
     const elements = Array.from(
-        section.querySelectorAll<HTMLElement>(".expertise-reveal, .expertise-card"),
+        section.querySelectorAll<HTMLElement>("[data-expertise-reveal]"),
     );
 
     if (!elements.length) return;
@@ -87,32 +95,30 @@ function initAboutExpertise(): void {
         "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    if (reducedMotion || !("animate" in Element.prototype)) {
-        elements.forEach((element) => {
-            element.style.opacity = "1";
-            element.style.transform = "none";
-        });
+    if (
+        reducedMotion ||
+        !("animate" in Element.prototype) ||
+        !("IntersectionObserver" in window)
+    ) {
         return;
     }
 
     elements.forEach((element) => {
-        const isCard = element.classList.contains("expertise-card");
-
         const animation = element.animate(
             [
                 {
                     opacity: 0,
-                    transform: isCard
-                        ? "translate3d(0, 38px, 0) scale(0.985)"
-                        : "translate3d(0, 28px, 0)",
+                    transform: "translate3d(0, 38px, 0)",
+                    filter: "blur(5px)",
                 },
                 {
                     opacity: 1,
-                    transform: "translate3d(0, 0, 0) scale(1)",
+                    transform: "translate3d(0, 0, 0)",
+                    filter: "blur(0px)",
                 },
             ],
             {
-                duration: isCard ? 1200 : 1000,
+                duration: 1150,
                 easing: "cubic-bezier(0.16, 1, 0.3, 1)",
                 fill: "both",
             },
@@ -150,7 +156,7 @@ function initAboutExpertise(): void {
     elements.forEach((element) => {
         expertiseObserver?.observe(element);
     });
-}
+};
 
 document.removeEventListener("astro:page-load", initAboutExpertise);
 document.removeEventListener("astro:before-swap", cleanupExpertise);

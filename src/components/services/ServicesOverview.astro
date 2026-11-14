@@ -1,0 +1,241 @@
+
+---
+const services = [
+  {
+    number: "01",
+    title: "Custom Website Development",
+    category: "Website Development",
+    description:
+      "Purpose-built websites tailored to your brand, audience and business goals — from professional business websites to conversion-focused landing pages.",
+    capabilities: ["Business Websites", "Landing Pages", "Custom Web Design"],
+  },
+  {
+    number: "02",
+    title: "Shopify Development",
+    category: "Shopify Solutions",
+    description:
+      "Professional Shopify stores built around your brand, products and business needs, with customized storefronts and seamless shopping experiences.",
+    capabilities: ["Shopify Store Setup", "Theme Customization", "Product Pages"],
+  },
+  {
+    number: "03",
+    title: "Wix Website Development",
+    category: "Wix Solutions",
+    description:
+      "Modern and responsive Wix websites designed for businesses, professionals and brands, with customized layouts and practical functionality.",
+    capabilities: ["Wix Website Design", "Wix Customization", "Business Websites"],
+  },
+  {
+    number: "04",
+    title: "Frontend Development",
+    category: "Frontend Engineering",
+    description:
+      "Responsive, accessible and interactive user interfaces that transform design concepts into polished digital experiences across devices.",
+    capabilities: ["Responsive Interfaces", "UI Development", "Web Animations"],
+  },
+  {
+    number: "05",
+    title: "UI Implementation & Animations",
+    category: "Interactive Experiences",
+    description:
+      "Turning Figma designs and visual concepts into functional interfaces with thoughtful interactions, smooth transitions and engaging animations.",
+    capabilities: ["Figma to Code", "Micro Interactions", "Scroll Animations"],
+  },
+  {
+    number: "06",
+    title: "Backend Development",
+    category: "Backend Engineering",
+    description:
+      "Reliable server-side functionality, application logic and data handling to power secure, maintainable and scalable web applications.",
+    capabilities: ["Server-side Logic", "Authentication", "Business Logic"],
+  },
+  {
+    number: "07",
+    title: "Full Stack Web Applications",
+    category: "End-to-End Development",
+    description:
+      "Complete web applications connecting frontend interfaces, backend systems and databases into seamless digital solutions.",
+    capabilities: ["Web Applications", "Admin Dashboards", "User Portals"],
+  },
+  {
+    number: "08",
+    title: "API & Database Development",
+    category: "Data & Backend Solutions",
+    description:
+      "Structured database architecture and API development that help applications communicate, organize information and manage data efficiently.",
+    capabilities: ["REST APIs", "Database Design", "Data Management"],
+  },
+  {
+    number: "09",
+    title: "E-commerce Development",
+    category: "E-commerce Solutions",
+    description:
+      "Feature-rich online shopping experiences with product catalogs, shopping cart functionality and streamlined checkout workflows.",
+    capabilities: ["Online Stores", "Shopping Carts", "Checkout Systems"],
+  },
+  {
+    number: "10",
+    title: "Third-Party Integrations",
+    category: "Application Integrations",
+    description:
+      "Connecting websites and applications with external platforms and services to extend functionality and streamline business workflows.",
+    capabilities: ["Payment Gateways", "External APIs", "Webhooks"],
+  },
+  {
+    number: "11",
+    title: "Website Optimization",
+    category: "Performance Engineering",
+    description:
+      "Improving website speed, responsiveness and technical performance to create faster, smoother and more efficient digital experiences.",
+    capabilities: ["Speed Optimization", "Responsive Optimization", "Technical SEO"],
+  },
+  {
+    number: "12",
+    title: "Website Maintenance & Support",
+    category: "Website Care",
+    description:
+      "Keeping websites reliable and up to date through ongoing maintenance, technical improvements, bug fixes and regular updates.",
+    capabilities: ["Bug Fixes", "Website Updates", "Technical Support"],
+  },
+];
+---
+
+<section
+  id="services-overview"
+  aria-labelledby="services-heading"
+  class="relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-24 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  <!-- Heading -->
+  <div
+    data-service-reveal
+    class="mb-20 grid grid-cols-[minmax(0,1.5fr)_minmax(240px,0.7fr)] items-end gap-10 max-xl:grid-cols-[minmax(0,1.3fr)_minmax(220px,0.7fr)] max-lg:grid-cols-1 max-lg:gap-8 max-lg:text-center max-md:mb-14 max-md:gap-6"
+  >
+    <div class="min-w-0">
+      <div class="mb-7 flex items-center gap-4 max-lg:justify-center max-md:mb-5">
+        <span class="h-px w-10 shrink-0 bg-[var(--accent)]"></span>
+        <span class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+          02 / Expertise & Services
+        </span>
+      </div>
+
+      <h2
+        id="services-heading"
+        class="whitespace-nowrap text-[clamp(3rem,7.1vw,7.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.085em] text-[var(--text)] max-lg:text-[clamp(3.5rem,10vw,6rem)] max-md:text-[clamp(2.5rem,10.5vw,4.5rem)] max-sm:text-[clamp(1.9rem,9.5vw,3rem)]"
+      >
+        SERVICES<span class="text-[var(--accent)]">.</span>
+      </h2>
+    </div>
+
+    <div
+      class="flex min-w-0 flex-col items-start gap-5 pb-2 max-lg:mx-auto max-lg:max-w-xl max-lg:items-center max-lg:pb-0"
+    >
+      <p
+        class="max-w-md font-[var(--font-primary-family)] text-[14px] leading-[1.9] text-[var(--muted)] max-lg:text-center max-md:text-[13px]"
+      >
+        From custom websites and e-commerce stores to complete full-stack
+        applications, I provide digital solutions tailored to your
+        business needs.
+      </p>
+
+      <div class="flex items-center gap-3">
+        <span
+          class="font-[var(--font-primary-family)] text-[2.5rem] font-semibold leading-none tracking-[-0.07em] text-[var(--text)]"
+        >
+          {String(services.length).padStart(2, "0")}
+        </span>
+
+        <span
+          class="max-w-[90px] font-[var(--font-primary-family)] text-[9px] font-semibold uppercase leading-[1.6] tracking-[0.16em] text-[var(--muted)]"
+        >
+          Areas of expertise
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services list -->
+  <div class="flex flex-col">
+    {services.map((service) => (
+      <article
+        data-service-reveal
+        class="service-card group relative isolate grid grid-cols-[100px_minmax(0,1fr)] items-center gap-10 overflow-hidden border-t border-[var(--border)] py-10 transition-[padding,background-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[var(--surface)] hover:px-7 max-lg:grid-cols-[75px_minmax(0,1fr)] max-lg:gap-7 max-md:grid-cols-[48px_minmax(0,1fr)] max-md:gap-5 max-md:py-8 max-md:hover:px-3"
+      >
+        <!-- Right background number -->
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute right-0 top-0 bottom-0 z-0 flex items-center justify-end overflow-hidden select-none font-[var(--font-heading)] text-[clamp(10rem,20vw,19rem)] leading-none tracking-[-0.1em] text-[var(--text)] opacity-[0.035] transition-[opacity,transform] duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110 group-hover:opacity-[0.13] max-md:text-[clamp(8rem,30vw,12rem)]"
+        >
+          {service.number}
+        </span>
+
+        <!-- Original left numbering -->
+        <div class="relative z-10 flex h-full flex-col justify-between">
+          <span class="text-xs font-semibold tracking-[0.15em] text-[var(--accent)] transition-colors duration-500">
+            /{service.number}
+          </span>
+
+          <span class="mt-8 h-8 w-px origin-top bg-[var(--border)] transition-transform duration-700 group-hover:scale-y-150 max-md:hidden"></span>
+        </div>
+
+        <!-- Main information -->
+        <div class="relative z-10 min-w-0">
+          <div class="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span class="font-[var(--font-primary-family)] text-xs font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+              {service.category}
+            </span>
+
+            <span class="h-1 w-1 rounded-full bg-[var(--muted)]"></span>
+
+            <span class="text-xs font-medium uppercase tracking-[0.12em] text-[var(--accent)]">
+              Available
+            </span>
+          </div>
+
+          <h3
+            class="max-w-3xl font-[var(--font-heading)] text-[clamp(1.8rem,3.6vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.055em] text-[var(--text)] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1 max-md:text-[clamp(1.65rem,7vw,2.4rem)]"
+          >
+            {service.title}
+          </h3>
+
+          <p
+            class="mt-5 max-w-2xl font-[var(--font-primary-family)] text-xs leading-[1.9] text-[var(--muted)] max-md:text-[11px]"
+          >
+            {service.description}
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            {service.capabilities.map((capability) => (
+              <span
+                class="inline-flex items-center rounded-full border border-[var(--border)] px-3 py-2 font-[var(--font-primary-family)] text-[10px] font-medium leading-none text-[var(--muted)] transition-colors duration-500 group-hover:border-[var(--accent)] group-hover:text-[var(--text)] max-md:px-2.5 max-md:py-1.5 max-md:text-[9px]"
+              >
+                {capability}
+              </span>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <!-- Closing note -->
+  <div
+    data-service-reveal
+    class="mt-10 flex items-center justify-between gap-6 max-md:flex-col max-md:items-center max-md:text-center"
+  >
+    <p
+      class="font-[var(--font-primary-family)] text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]"
+    >
+      From concept to completion.
+    </p>
+
+    <span
+      class="font-[var(--font-primary-family)] text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]"
+    >
+      Built with purpose. Developed with precision.
+    </span>
+  </div>
+</section>
+
+<script>
+  import "../../scripts/services-overview";
+</script>

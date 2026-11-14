@@ -2,189 +2,295 @@
 const expertise = [
   {
     number: "01",
-    label: "THE INTERFACE LAYER",
-    title: "Frontend",
-    subtitle: "Where ideas become experiences.",
+    category: "Web Development",
+    subtitle: "Digital Experiences",
+    title: "Web Development",
     description:
-      "Creating responsive, accessible and engaging interfaces with a focus on thoughtful design, performance and interaction.",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Astro",
-      "Tailwind CSS",
-      "Bootstrap",
-      "JQuery",
-    ],
-    featured: true,
+      "Building modern, responsive websites and web applications that turn ideas into meaningful digital experiences.",
+    keywords: ["Business Websites", "Web Applications", "Responsive Experiences"],
+    outcome: "From concept to a complete digital presence.",
   },
   {
     number: "02",
-    label: "THE APPLICATION LAYER",
-    title: "Backend",
-    subtitle: "The logic behind the experience.",
+    category: "Frontend Experiences",
+    subtitle: "Interface & Interaction",
+    title: "Frontend Experiences",
     description:
-      "Building server-side functionality, connecting services and developing APIs that power web applications.",
-    technologies: [
-      "Node.js",
-      "Express",
-      "REST APIs",
-      "Authentication",
-    ],
-    featured: false,
+      "Creating polished interfaces with purposeful interactions, fluid animations and responsive layouts that feel natural to use.",
+    keywords: ["UI Development", "Motion & Interaction", "Responsive Interfaces"],
+    outcome: "Interfaces that feel as good as they look.",
   },
   {
     number: "03",
-    label: "THE DATA & WORKFLOW LAYER",
-    title: "Database & Tools",
-    subtitle: "Organizing data. Improving workflows.",
+    category: "Full Stack Solutions",
+    subtitle: "End-to-end Development",
+    title: "Full Stack Solutions",
     description:
-      "Working with databases and development tools to manage application data, collaborate and maintain an efficient workflow.",
-    technologies: [
-      "MongoDB",
-      "PostgreSQL",
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Vercel",
-    ],
-    featured: false,
+      "Connecting frontend experiences with backend logic, APIs and databases to build complete, functional applications.",
+    keywords: ["Application Logic", "API Integration", "Database Connectivity"],
+    outcome: "Complete solutions, built from front to back.",
   },
+  {
+    number: "04",
+    category: "E-commerce Development",
+    subtitle: "Commerce & Platforms",
+    title: "E-commerce Development",
+    description:
+      "Customizing Shopify themes and developing storefront experiences that help businesses present and sell their products.",
+    keywords: ["Shopify Themes", "Store Customization", "Wix Development"],
+    outcome: "Digital storefronts designed for business.",
+  },
+  {
+    number: "05",
+    category: "Web Optimization",
+    subtitle: "Quality & Performance",
+    title: "Web Optimization",
+    description:
+      "Improving website performance, responsive behavior and cross-browser consistency for a smoother experience across devices.",
+    keywords: ["Performance", "Accessibility", "Cross-browser Quality"],
+    outcome: "Every detail refined for a better experience.",
+  },
+];
+
+const principles = [
+  "Purposeful design",
+  "Clean implementation",
+  "Responsive by nature",
+  "Attention to detail",
 ];
 ---
 
 <section
   id="about-expertise"
-  class="expertise-section relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-32 md:px-[6%] max-md:px-[5.5%] max-md:py-24 max-sm:px-[5%] max-sm:py-20"
+  aria-labelledby="expertise-heading"
+  class="expertise-section relative mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-24 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
 >
-  <!-- Section heading -->
-  <div class="expertise-reveal relative grid grid-cols-[1fr_300px] items-end gap-10 pb-14 max-lg:grid-cols-[1fr_250px] max-md:grid-cols-1 max-md:gap-7 max-md:pb-10">
-    <div>
-      <span class="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-[var(--accent)] max-sm:mb-6">
-        <span class="h-px w-8 bg-[var(--accent)]"></span>
-        03 / What I work with
-      </span>
+  <!-- Section introduction -->
+  <div
+    data-expertise-reveal
+    class="mb-20 flex items-end justify-between gap-12 max-lg:flex-col max-lg:items-center max-lg:text-center max-md:mb-14 max-md:gap-7"
+  >
+    <div class="w-full max-w-3xl">
+      <div class="mb-7 flex items-center gap-4 max-lg:justify-center">
+        <span class="h-px w-10 shrink-0 bg-[var(--accent)]"></span>
+        <span
+          class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]"
+        >
+          03 / What I Bring To The Table
+        </span>
+      </div>
 
-      <h2 class="mt-8 max-w-212.5 font-heading text-[clamp(56px,8.5vw,112px)] font-bold uppercase leading-[0.82] tracking-[-0.08em] text-[var(--text)]">
-        My technical
-        <span class="block">toolkit<span class="text-[var(--accent)]">.</span></span>
+      <h2
+        id="expertise-heading"
+        class="text-[clamp(3.5rem,8vw,7.5rem)] font-bold uppercase leading-[0.88] tracking-[-0.075em] text-[var(--text)] max-md:text-[clamp(3rem,13vw,5rem)]"
+      >
+        BEYOND THE
+        <span class="block text-[var(--accent)]">CODE.</span>
       </h2>
     </div>
 
-    <div class="flex flex-col gap-5 pb-1 max-md:max-w-97.5">
-      <span class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
-        One stack. Multiple layers.
-      </span>
-
-      <p class="text-sm leading-[1.9] text-[var(--muted)]">
-        The technologies I use to bring together interfaces, application
-        logic and data — building complete digital experiences.
-      </p>
-
-      <div class="flex items-center gap-3">
-        <span class="font-bold text-4xl tracking-[-0.07em] text-[var(--text)]">
-          03
-        </span>
-        <span class="h-8 w-px bg-[var(--border)]"></span>
-        <span class="max-w-30 text-xs uppercase leading-[1.6] tracking-[0.12em] text-[var(--muted)]">
-          Core areas of development
-        </span>
-      </div>
-    </div>
+    <p
+      class="w-full max-w-md pb-2 font-(--font-primary-family) text-sm leading-[1.9] text-[var(--muted)] max-lg:max-w-xl max-md:text-[14px]"
+    >
+      It's not just about writing code. It's about understanding the bigger
+      picture, solving real problems and creating digital experiences that
+      make a difference.
+    </p>
   </div>
 
-  <!-- Stack architecture -->
-  <div class="grid grid-cols-12 gap-4 max-sm:gap-3">
-    {
-      expertise.map((item, index) => (
-        <article
-          class:list={[
-            "expertise-card group relative isolate flex min-h-97.5 flex-col overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-[var(--accent)]/50 max-lg:min-h-92.5 max-lg:p-7 max-md:col-span-12 max-md:min-h-0 max-md:p-7 max-sm:rounded-[1.15rem] max-sm:p-6",
-            index === 0 ? "col-span-7 max-md:col-span-12" : "",
-            index === 1 ? "col-span-5 max-md:col-span-12" : "",
-            index === 2 ? "col-span-12 min-h-75 max-lg:min-h-75 max-md:min-h-0" : "",
-          ]}
-        >
-          <!-- Decorative number -->
-          <span
-            aria-hidden="true"
-            class="pointer-events-none absolute -right-4 -top-9 -z-10 select-none font-heading text-[clamp(150px,19vw,250px)] leading-none tracking-[-0.12em] text-[var(--text)] opacity-[0.035] transition-all duration-700 group-hover:-translate-y-3 group-hover:text-[var(--accent)] group-hover:opacity-[0.09] max-sm:text-[170px]"
-          >
-            {item.number}
-          </span>
+  <!-- Intro strip -->
+  <div
+    data-expertise-reveal
+    class="mb-5 flex items-center justify-between gap-4 border-y border-[var(--border)] py-5 max-sm:flex-col max-sm:items-center max-sm:text-center"
+  >
+    <span
+      class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]"
+    >
+      Areas of expertise
+    </span>
 
-          <!-- Top metadata -->
-          <div class="flex items-center justify-between gap-4">
-            <span class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
-              {item.label}
+    <span
+      class="text-xs uppercase tracking-[0.16em] text-[var(--accent)]"
+    >
+      Ideas into experiences
+    </span>
+  </div>
+
+  <!-- Expertise rows -->
+  <div class="expertise-list flex flex-col gap-3">
+    {expertise.map((item) => (
+      <article
+        data-expertise-reveal
+        class="expertise-row group relative isolate overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] transition-[border-color,transform,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:z-10 hover:-translate-y-1 hover:scale-[1.012] hover:border-[var(--accent)] hover:shadow-[0_24px_70px_-35px_color-mix(in_srgb,var(--accent)_45%,transparent)] max-md:rounded-[1.15rem] max-md:hover:translate-y-0 max-md:hover:scale-100"
+      >
+        <!-- Background number -->
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute -right-3 -top-12 z-[-1] select-none font-[var(--font-heading)] text-[clamp(10rem,20vw,19rem)] leading-none tracking-[-0.1em] text-[var(--text)] opacity-[0.035] transition-[opacity,transform,color] duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-[-12px] group-hover:translate-y-2 group-hover:scale-110 group-hover:text-[var(--bg)] group-hover:opacity-[0.13] max-md:right-0 max-md:top-[-1rem] max-md:text-xs"
+        >
+          {item.number}
+        </span>
+
+        <!-- Inset hover fill -->
+        <div
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-x-3 inset-y-3 z-[-1] origin-left scale-x-0 rounded-[1.1rem] bg-[var(--accent)] transition-transform duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100 max-md:inset-x-2 max-md:inset-y-2 max-md:rounded-[0.9rem]"
+        ></div>
+
+        <!-- Responsive content layout -->
+        <div
+          class="relative grid grid-cols-[0.55fr_minmax(0,2fr)_minmax(130px,1fr)_auto] items-center gap-8 px-9 py-10 transition-[padding] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:px-11 max-xl:grid-cols-[90px_minmax(0,1fr)_minmax(120px,0.7fr)_auto] max-xl:gap-6 max-lg:grid-cols-[minmax(0,1fr)_auto] max-lg:items-start max-lg:gap-x-6 max-lg:gap-y-7 max-lg:px-8 max-lg:py-9 max-lg:group-hover:px-8 max-md:gap-x-4 max-md:gap-y-6 max-md:px-5 max-md:py-7 max-md:group-hover:px-5"
+        >
+          <!-- Number and category -->
+          <div
+            class="flex flex-col gap-3 max-lg:col-span-2 max-lg:row-start-1 max-lg:flex-row max-lg:items-center max-lg:gap-4"
+          >
+            <span
+              class="text-xs font-semibold tracking-[0.15em] text-[var(--accent)] transition-colors duration-500 group-hover:text-white"
+            >
+              {item.number}
             </span>
 
-            <span class="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-[var(--muted)] transition-all duration-500 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white">
-              <svg
-                viewBox="0 0 20 20"
-                fill="none"
-                class="h-4 w-4 transition-transform duration-500 group-hover:rotate-45"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 15L15 5M6 5H15V14"
-                  stroke="currentColor"
-                  stroke-width="1.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+            <span
+              class="max-w-27.5 text-xs font-medium uppercase leading-[1.6] tracking-[0.13em] text-[var(--muted)] transition-colors duration-500 group-hover:text-white/65 max-lg:max-w-none max-md:text-[8px]"
+            >
+              {item.category}
             </span>
           </div>
 
-          <!-- Title and description -->
-          <div class:list={[
-            "relative z-10 mt-14 max-w-120 max-sm:mt-10",
-            index === 2 ? "max-w-130" : "",
-          ]}>
-            <span class="block text-[10px] uppercase tracking-[0.14em] text-[var(--muted)]">
+          <!-- Main content -->
+          <div
+            class="min-w-0 max-lg:col-span-2 max-lg:col-start-1 max-lg:row-start-2"
+          >
+            <span
+              class="mb-3 block text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--muted)] transition-colors duration-500 group-hover:text-white/65"
+            >
               {item.subtitle}
             </span>
 
-            <h3 class="mt-3 font-bold text-[clamp(38px,5vw,66px)] leading-[0.9] tracking-[-0.07em] text-[var(--text)] transition-colors duration-500 group-hover:text-[var(--accent)] max-sm:text-[43px]">
-              {item.title}<span class="text-[var(--accent)]">.</span>
+            <h3
+              class="expertise-title text-[clamp(2rem,4vw,3.9rem)] font-bold leading-[0.98] tracking-[-0.055em] text-[var(--text)] transition-[color,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 group-hover:text-white max-xl:text-[clamp(2rem,3.5vw,3.5rem)] max-md:text-[clamp(1.8rem,8vw,2.8rem)] max-md:leading-[1.02] max-md:group-hover:translate-x-0"
+            >
+              {item.title}
             </h3>
 
-            <p class="mt-5 max-w-97.5 text-[13px] leading-[1.9] text-[var(--muted)] max-sm:text-xs">
+            <p
+              class="mt-4 max-w-xl font-[var(--font-primary-family)] text-sm leading-[1.85] text-[var(--muted)] transition-colors duration-500 group-hover:text-white/75 max-md:mt-3 max-md:text-[12px] max-md:leading-[1.8]"
+            >
               {item.description}
             </p>
+
+            <div class="mt-6 flex flex-wrap gap-x-5 gap-y-3 max-md:mt-5 max-md:gap-x-3 max-md:gap-y-2">
+              {item.keywords.map((keyword) => (
+                <span
+                  class="relative font-[var(--font-primary-family)] text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--text)] transition-colors duration-500 group-hover:text-white/90 before:mr-2 before:inline-block before:h-1 before:w-1 before:rounded-full before:bg-[var(--accent)] before:align-middle before:transition-colors before:duration-500 group-hover:before:bg-white max-md:text-[9px]"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <!-- Technology list -->
-          <div class:list={[
-            "relative z-10 mt-auto flex flex-wrap gap-2 border-t border-[var(--border)] pt-7",
-            index === 2 ? "max-w-none" : "",
-          ]}>
-            {item.technologies.map((technology) => (
-              <span class="rounded-full border border-[var(--border)] px-3.5 py-2 text-xs font-medium tracking-[0.02em] text-[var(--text)] transition-all duration-300 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white max-sm:px-3 max-sm:py-1.5">
-                {technology}
-              </span>
-            ))}
+          <!-- Outcome -->
+          <div
+            class="max-w-47.5 justify-self-end max-lg:col-span-2 max-lg:col-start-1 max-lg:row-start-3 max-lg:max-w-full max-lg:justify-self-start"
+          >
+            <span
+              class="mb-3 block text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--muted)] transition-colors duration-500 group-hover:text-white/55"
+            >
+              The outcome
+            </span>
+
+            <p
+              class="text-xs leading-[1.8] text-[var(--text)] transition-colors duration-500 group-hover:text-white max-md:text-[11px]"
+            >
+              {item.outcome}
+            </p>
           </div>
-        </article>
-      ))
-    }
+        </div>
+      </article>
+    ))}
   </div>
 
-  <!-- Closing statement -->
-  <div class="expertise-reveal mt-7 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--border)] pt-7 max-sm:mt-5 max-sm:pt-5">
-    <span class="text-xs uppercase tracking-[0.16em] text-[var(--muted)]">
-      From frontend to backend
+  <!-- Philosophy -->
+  <div
+    data-expertise-reveal
+    class="mt-28 flex flex-col items-start gap-10 border-t border-[var(--border)] pt-12 max-md:mt-20 max-md:items-center max-md:gap-8 max-md:text-center"
+  >
+    <!-- Heading -->
+    <div class="w-full">
+      <div class="mb-6 flex items-center gap-4 max-md:justify-center">
+        <span class="h-px w-8 shrink-0 bg-[var(--accent)]"></span>
+        <span
+          class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]"
+        >
+          My philosophy
+        </span>
+      </div>
+
+      <h3
+        class="max-w-5xl font-bold text-[clamp(2.8rem,6vw,5.8rem)] leading-[0.95] tracking-[-0.065em] text-[var(--text)] max-md:mx-auto max-md:text-[clamp(2rem,8vw,3.5rem)] max-sm:text-[clamp(1.75rem,7.5vw,2.4rem)]"
+      >
+        Thoughtful by design.
+        <span class="block text-[var(--accent)]">
+          Intentional in every detail.
+        </span>
+      </h3>
+    </div>
+
+    <!-- Principles -->
+    <div
+      class="flex w-full flex-wrap justify-start gap-2.5 max-md:justify-center max-sm:gap-2"
+    >
+      {principles.map((principle) => (
+        <span
+          class="rounded-full border border-[var(--border)] px-5 py-3 font-[var(--font-primary-family)] text-[11px] font-medium text-[var(--text)] transition-[background,border-color,color,transform] duration-500 hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white max-sm:px-4 max-sm:py-2.5 max-sm:text-[10px]"
+        >
+          {principle}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  <!-- Next section link -->
+  <div
+    data-expertise-reveal
+    class="mt-20 flex items-center justify-between gap-6 border-t border-[var(--border)] pt-7 max-md:mt-14 max-sm:flex-col max-sm:items-center max-sm:text-center"
+  >
+    <span
+      class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--accent)] max-sm:leading-[1.7]"
+    >
+      The journey behind the work
     </span>
 
-    <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent)]">
-      <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]"></span>
-      Building across the stack
-    </span>
+    <a
+      href="#about-experience"
+      class="group/link inline-flex items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em] text-[var(--text)] transition-colors duration-300 hover:text-[var(--accent)]"
+    >
+      Discover my experience
+
+      <span
+        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--border)] transition-[transform,background,border-color,color] duration-500 group-hover/link:translate-x-1 group-hover/link:border-[var(--accent)] group-hover/link:bg-[var(--accent)] group-hover/link:text-white"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          class="h-4 w-4"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12H19M19 12L12 5M19 12L12 19"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+    </a>
   </div>
 </section>
 
 <script>
-  import "../../scripts/about-expertise.ts";
+  import "../../scripts/about-expertise";
 </script>

@@ -1,0 +1,374 @@
+
+---
+const skillGroups = [
+  {
+    number: "01",
+    title: "Frontend",
+    description: "Crafting responsive interfaces and engaging digital experiences.",
+    layout: "lg:col-span-7",
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Astro",
+      "Tailwind CSS",
+      "Bootstrap",
+      "jQuery",
+      "SASS / SCSS / LESS",
+      "GSAP",
+      "Framer Motion",
+    ],
+  },
+  {
+    number: "02",
+    title: "Backend",
+    description: "Building application logic, server-side functionality and APIs.",
+    layout: "lg:col-span-5",
+    skills: ["Node.js", "Express.js", "REST APIs"],
+  },
+  {
+    number: "03",
+    title: "Database",
+    description: "Structuring and managing application data.",
+    layout: "lg:col-span-5",
+    skills: ["MongoDB", "Mongoose"],
+  },
+  {
+    number: "04",
+    title: "Tools & Workflow",
+    description: "The tools behind my development, collaboration and deployment workflow.",
+    layout: "lg:col-span-7",
+    skills: [
+      "Git",
+      "GitHub",
+      "Figma",
+      "VS Code",
+      "Postman",
+      "Thunder Client",
+      "Vercel",
+      "Netlify",
+    ],
+  },
+];
+
+const platformSkills = [
+  {
+    number: "01",
+    title: "Shopify",
+    description: "Theme customization & development",
+    tag: "E-commerce",
+  },
+  {
+    number: "02",
+    title: "Wix",
+    description: "Website development",
+    tag: "Website platform",
+  },
+];
+
+const practices = [
+  "Responsive Development",
+  "UI Implementation",
+  "API Integration",
+  "Performance Optimization",
+  "Cross-browser Compatibility",
+  "SEO Fundamentals",
+];
+
+const totalSkills =
+  skillGroups.reduce((total, group) => total + group.skills.length, 0) +
+  platformSkills.length;
+---
+
+<section
+  id="about-skills"
+  aria-labelledby="skills-heading"
+  class="relative isolate mx-auto w-full max-w-[1600px] overflow-hidden px-[8%] py-24 md:px-[6%] max-md:px-[5.5%] max-md:py-20"
+>
+  <!-- Ambient accent -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute -right-52 top-28 -z-10 h-[540px] w-[540px] rounded-full bg-[var(--accent)] opacity-[0.07] blur-[160px]"
+  ></div>
+
+  <div class="relative">
+    <!-- Header -->
+    <div
+      data-skills-reveal
+      class="mb-20 flex items-end justify-between gap-12 max-lg:flex-col max-lg:items-center max-lg:text-center max-md:mb-14"
+    >
+      <div class="max-w-4xl">
+        <div class="mb-8 flex items-center gap-4">
+          <span class="h-px w-10 bg-[var(--accent)]"></span>
+          <span class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+            02 / The Technical Stack
+          </span>
+        </div>
+
+        <h2
+          id="skills-heading"
+          class="text-[clamp(3.5rem,8.5vw,8rem)] font-bold uppercase leading-[0.82] tracking-[-0.075em] text-[var(--text)]"
+        >
+          My tools.
+          <span class="block text-[var(--accent)]">My craft.</span>
+        </h2>
+      </div>
+
+      <div class="flex w-full max-w-[350px] flex-col gap-7 pb-2">
+        <p class="font-[var(--font-primary-family)] text-base leading-[1.8] text-[var(--muted)] md:text-lg">
+          The technologies and tools I bring together to turn complex ideas
+          into thoughtful, functional digital experiences.
+        </p>
+
+        <div class="flex items-center gap-5 border-t border-[var(--border)] pt-5">
+          <div>
+            <span class="font-[var(--font-heading)] text-4xl font-bold tracking-[-0.06em] text-[var(--text)]">
+              {totalSkills}
+              <span class="text-[var(--accent)]">+</span>
+            </span>
+            <span class="mt-1 block font-[var(--font-primary-family)] text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+              Technologies & tools
+            </span>
+          </div>
+
+          <span class="h-10 w-px bg-[var(--border)]"></span>
+
+          <div>
+            <span class="font-[var(--font-heading)] text-4xl font-bold tracking-[-0.06em] text-[var(--text)]">
+              05
+            </span>
+            <span class="mt-1 block font-[var(--font-primary-family)] text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+              Skill categories
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main skill grid -->
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-12">
+      {skillGroups.map((group) => (
+        <article
+          data-skills-reveal
+          class:list={[
+            "group relative flex min-w-0 flex-col overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-8 transition-[border-color,background-color] duration-500 hover:border-[var(--accent)] max-md:p-6",
+            group.layout,
+          ]}
+        >
+          <!-- Decorative corner -->
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full border border-[var(--border)] transition-all duration-700 group-hover:scale-125 group-hover:border-[var(--accent)]"
+          ></div>
+
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -right-8 -top-12 h-32 w-32 rounded-full border border-[var(--border)] opacity-70 transition-all duration-700 group-hover:scale-125 group-hover:border-[var(--accent)]"
+          ></div>
+
+          <!-- Card heading -->
+          <div class="relative flex items-center justify-between gap-4">
+            <span class="font-[var(--font-primary-family)] text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">
+              / {group.number}
+            </span>
+
+            <span class="font-[var(--font-primary-family)] text-[0.65rem] font-medium uppercase tracking-[0.16em] text-[var(--muted)]">
+              {group.skills.length.toString().padStart(2, "0")} Skills
+            </span>
+          </div>
+
+          <div class="relative mt-9">
+            <h3 class="font-[var(--font-heading)] text-4xl font-bold tracking-[-0.065em] text-[var(--text)] md:text-5xl">
+              {group.title}
+            </h3>
+
+            <p class="mt-3 max-w-md font-[var(--font-primary-family)] text-sm leading-7 text-[var(--muted)]">
+              {group.description}
+            </p>
+          </div>
+
+          <!-- Technology badges -->
+          <div
+            class="relative mt-9 flex flex-wrap gap-2.5"
+            aria-label={`${group.title} technologies`}
+          >
+            {group.skills.map((skill, index) => (
+              <span
+                data-skill-item
+                style={`--skill-index: ${index}`}
+                class="inline-flex min-h-10 items-center rounded-full border border-[var(--border)] bg-[var(--bg)] px-4 py-2 font-[var(--font-primary-family)] text-xs font-medium text-[var(--text)] transition-[border-color,background-color,color,transform] duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white max-sm:px-3 max-sm:text-[0.7rem]"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+
+          <!-- Bottom accent -->
+          <div class="relative mt-auto flex items-center justify-between pt-10">
+            <span class="h-px w-12 bg-[var(--accent)] transition-all duration-500 group-hover:w-24"></span>
+
+            <span class="font-[var(--font-primary-family)] text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-[var(--muted)]">
+              Technical Expertise
+            </span>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Platform development -->
+    <section
+      data-skills-reveal
+      aria-labelledby="platform-heading"
+      class="group relative mt-5 overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-8 md:p-10"
+    >
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -right-24 -top-36 h-[380px] w-[380px] rounded-full border border-[var(--border)] opacity-70 transition-transform duration-1000 group-hover:scale-110"
+      ></div>
+
+      <div class="relative grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-5">
+          <span class="font-[var(--font-primary-family)] text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+            Beyond traditional development
+          </span>
+
+          <h3
+            id="platform-heading"
+            class="mt-5 max-w-lg font-[var(--font-heading)] text-4xl font-bold leading-[0.95] tracking-[-0.065em] text-[var(--text)] md:text-5xl"
+          >
+            Platforms.
+            <span class="block text-[var(--accent)]">Possibilities.</span>
+          </h3>
+
+          <p class="mt-5 max-w-md font-[var(--font-primary-family)] text-sm leading-7 text-[var(--muted)]">
+            Building and customizing websites across platforms to create
+            flexible digital experiences.
+          </p>
+        </div>
+
+        <div class="grid gap-3 lg:col-span-7 sm:grid-cols-2">
+          {platformSkills.map((platform) => (
+            <article
+              class="group/platform relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg)] p-6 transition-[border-color,transform] duration-500 hover:-translate-y-1 hover:border-[var(--accent)]"
+            >
+              <div class="flex items-center justify-between gap-3">
+                <span class="font-[var(--font-primary-family)] text-xs font-semibold tracking-[0.15em] text-[var(--accent)]">
+                  / {platform.number}
+                </span>
+
+                <span class="rounded-full border border-[var(--border)] px-3 py-1 font-[var(--font-primary-family)] text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                  {platform.tag}
+                </span>
+              </div>
+
+              <h4 class="mt-9 font-[var(--font-heading)] text-4xl font-bold tracking-[-0.06em] text-[var(--text)]">
+                {platform.title}
+              </h4>
+
+              <p class="mt-2 font-[var(--font-primary-family)] text-sm leading-6 text-[var(--muted)]">
+                {platform.description}
+              </p>
+
+              <div class="mt-7 flex items-center justify-between">
+                <span class="h-px w-10 bg-[var(--accent)] transition-all duration-500 group-hover/platform:w-20"></span>
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="h-5 w-5 text-[var(--muted)] transition-all duration-300 group-hover/platform:-translate-y-1 group-hover/platform:translate-x-1 group-hover/platform:text-[var(--accent)]"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M7 17 17 7M7 7h10v10"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Development approach -->
+    <section
+      data-skills-reveal
+      aria-labelledby="practices-heading"
+      class="relative mt-5 overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-8 md:p-10"
+    >
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-4">
+          <span class="font-[var(--font-primary-family)] text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+            Beyond the stack
+          </span>
+
+          <h3
+            id="practices-heading"
+            class="mt-5 font-[var(--font-heading)] text-4xl font-bold tracking-[-0.06em] text-[var(--text)] md:text-5xl"
+          >
+            How I build.
+          </h3>
+
+          <p class="mt-4 max-w-sm font-[var(--font-primary-family)] text-sm leading-7 text-[var(--muted)]">
+            Good development is more than knowing technologies. It is about
+            creating digital experiences that work beautifully.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 lg:col-span-8 lg:justify-end">
+          {practices.map((practice) => (
+            <span
+              data-skill-item
+              class="inline-flex items-center gap-3 rounded-full border border-[var(--border)] bg-[var(--bg)] px-4 py-3 font-[var(--font-primary-family)] text-xs font-medium text-[var(--text)] transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-[var(--accent)] md:text-sm"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-[var(--accent)]"></span>
+              {practice}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing statement -->
+    <div
+      data-skills-reveal
+      class="mt-12 flex items-center justify-between gap-6 border-t border-[var(--border)] pt-7 max-sm:flex-col"
+    >
+      <p class="text-xs font-medium uppercase tracking-[0.17em] text-[var(--accent)]">
+        Always learning. Always evolving.
+      </p>
+
+      <a
+        href="#about-expertise"
+        class="group inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)] transition-colors duration-300"
+      >
+        Explore my expertise
+
+        <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] transition-[transform,border-color,background-color] duration-300 group-hover:translate-x-1 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)]">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            class="h-4 w-4 transition-transform duration-300 group-hover:-rotate-45"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 12h14M13 5l7 7-7 7"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../../scripts/about-skills.ts";
+</script>
